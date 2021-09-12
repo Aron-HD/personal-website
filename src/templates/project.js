@@ -1,10 +1,9 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import { graphql, Link } from "gatsby"
-// import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import Layout from "../components/layout"
-import Seo from "../components/seo"
+import Layout from "../components/Layout"
+import Seo from "../components/Seo"
 
 import * as styles from "../styles/project.module.css"
 
@@ -39,7 +38,7 @@ const Project = props => {
           {props.data.contentfulBlogPost.title}
         </h1>
         <span className={styles.meta}>
-          <b>{props.data.contentfulBlogPost.author.github}</b> //{" "}
+          <b>{props.data.contentfulBlogPost.author.github}</b>{" "}
           {props.data.contentfulBlogPost.publishDate}
         </span>
         <br />
