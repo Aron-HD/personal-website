@@ -6,7 +6,7 @@
  */
 /** @jsx jsx */
 import { jsx } from "theme-ui"
-import * as React from "react"
+import { Fragment } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import favicon from "../images/favicon.ico"
@@ -28,7 +28,7 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
+    <Fragment>
       <Helmet>
         <link rel="icon" href={favicon} />
       </Helmet>
@@ -43,7 +43,7 @@ const Layout = ({ children }) => {
           <Social />
         </footer>
       </div>
-    </>
+    </Fragment>
   )
 }
 
