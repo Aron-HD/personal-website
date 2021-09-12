@@ -4,13 +4,16 @@
  *
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
-
+/** @jsx jsx */
+import { jsx } from "theme-ui"
 import * as React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-
-import Header from "./header"
-import "./layout.css"
+import favicon from "../images/favicon.ico"
+import Helmet from "react-helmet"
+import Header from "./Header"
+import Social from "./Social"
+import ThemeSwitcher from "./Theme-switcher"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -18,6 +21,7 @@ const Layout = ({ children }) => {
       site {
         siteMetadata {
           title
+          author
         }
       }
     }
@@ -25,23 +29,18 @@ const Layout = ({ children }) => {
 
   return (
     <>
+      <Helmet>
+        <link rel="icon" href={favicon} />
+      </Helmet>
+      <ThemeSwitcher />
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer
-          style={{
-            marginTop: `2rem`,
-          }}
-        >
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
+      <div>
+        <main sx={{ m: "1rem" }}>{children}</main>
+        <footer sx={{ m: "1rem" }}>
+          © {data.site.siteMetadata?.title}, {new Date().getFullYear()}
+          <br />
+          [built with Gatsby & Contentful]
+          <Social />
         </footer>
       </div>
     </>

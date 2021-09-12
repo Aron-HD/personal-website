@@ -4,8 +4,8 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Blog Site with Contentful`,
-    description: `Test blog site with contenful and gatsby.`,
+    title: `Aron Hayes Davidson`,
+    description: `Test blog site with contentful and gatsby.`,
     author: `@aronhd`,
     // siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
   },
@@ -45,5 +45,6 @@ module.exports = {
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
+    `gatsby-plugin-theme-ui`,
   ],
 }

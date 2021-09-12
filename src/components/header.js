@@ -1,35 +1,40 @@
-import * as React from "react"
+/** @jsx jsx */
+import { jsx } from "theme-ui"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
+import NavClosed from "./NavClosed"
+
+const Header = ({ siteTitle }) => {
+  return (
+    <header
+      sx={{
+        bg: "secondary",
+        marginBottom: "1.45rem",
       }}
     >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+      <div
+        sx={{
+          margin: `0 auto`,
+          maxWidth: 960,
+          padding: `1.45rem 1.0875rem`,
+        }}
+      >
+        <h1 sx={{ variant: "styles.h1", margin: 0 }}>
+          <Link
+            to="/"
+            sx={{
+              variant: "styles.a",
+            }}
+          >
+            {siteTitle}
+          </Link>
+        </h1>
+        <NavClosed />
+      </div>
+    </header>
+  )
+}
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
