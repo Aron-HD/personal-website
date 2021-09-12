@@ -2,6 +2,7 @@
 import { jsx } from "theme-ui"
 import { graphql, Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+
 import Layout from "../components/Layout"
 import Seo from "../components/Seo"
 

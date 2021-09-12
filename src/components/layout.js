@@ -7,10 +7,11 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import { Fragment } from "react"
-import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import favicon from "../images/favicon.ico"
+import PropTypes from "prop-types"
 import Helmet from "react-helmet"
+
+import favicon from "../images/favicon.ico"
 import Header from "./Header"
 import Social from "./Social"
 import ThemeSwitcher from "./Theme-switcher"
