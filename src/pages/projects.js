@@ -22,8 +22,9 @@ const Projects = () => {
               heroImage {
                 gatsbyImageData(
                   aspectRatio: 1.5
-                  width: 500
                   placeholder: BLURRED
+                  layout: CONSTRAINED
+                  width: 500
                 )
               }
               description {
