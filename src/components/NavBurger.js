@@ -9,11 +9,11 @@ const NavBurger = () => {
   const [open, setOpen] = useState(false)
   return (
     <Fragment>
-      <div id={styles.hamburger} open={open} onClick={() => setOpen(!open)}>
+      <button id={styles.hamburger} open={open} onClick={() => setOpen(!open)}>
         <span sx={{ bg: "primary" }} />
         <span sx={{ bg: "primary" }} />
         <span sx={{ bg: "primary" }} />
-      </div>
+      </button>
       <NavMenu open={open} />
     </Fragment>
   )
