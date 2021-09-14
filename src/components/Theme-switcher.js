@@ -9,7 +9,7 @@ const ThemeSwitcher = () => {
       sx={{
         position: "absolute",
         top: 25.5,
-        right: 25.5,
+        left: 25.5,
         bg: "muted",
         color: "primary",
         border: 0,
