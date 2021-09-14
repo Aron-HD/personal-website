@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import { Fragment, useState } from "react"
-// import NavMenu from "./NavMenu"
+import NavMenu from "./NavMenu"
 
 import * as styles from "../styles/NavBurger.module.css"
 
@@ -14,7 +14,7 @@ const NavBurger = () => {
         <span sx={{ bg: "primary" }} />
         <span sx={{ bg: "primary" }} />
       </div>
-      {/* <NavMenu open={open} /> */}
+      <NavMenu open={open} />
     </Fragment>
   )
 }
