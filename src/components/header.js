@@ -3,7 +3,7 @@ import { jsx } from "theme-ui"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 
-import NavClosed from "./NavClosed"
+import Navbar from "./Navbar"
 
 const Header = ({ siteTitle }) => {
   return (
@@ -20,6 +20,7 @@ const Header = ({ siteTitle }) => {
           padding: `1.45rem 1.0875rem`,
         }}
       >
+        <Navbar />
         <h1 sx={{ variant: "styles.h1", margin: 0 }}>
           <Link
             to="/"
@@ -30,7 +31,6 @@ const Header = ({ siteTitle }) => {
             {siteTitle}
           </Link>
         </h1>
-        <NavClosed />
       </div>
     </header>
   )
