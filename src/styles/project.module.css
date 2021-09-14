@@ -8,7 +8,7 @@
     text-align: center;
 }
 .meta {
-
+    text-decoration: none;
 }
 p.featured {
     text-align: center;
@@ -17,5 +17,5 @@ p.featured {
     
 }
 .body {
-
+    text-align: inherit;
 }
