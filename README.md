@@ -1,6 +1,6 @@
 # Personal website
 
-My personal portfolio website to host my other personal and work related projects. 
+My personal portfolio website to host my other personal and work related projects.
 
 Built with Gatsby, Contentful and GraphQL, deployed via Netlify, managed with kanban project in GitHub.
 
@@ -13,3 +13,5 @@ Providing a theme with theme-ui so for a theme switching button and consistent s
 ### Content delivery
 
 Delivered through Contentful CMS for easy managing of content and content models.
+
+Test.
