@@ -2,16 +2,10 @@
 
 My personal portfolio website to host my other personal and work related projects.
 
-Built with Gatsby, Contentful and GraphQL, deployed via Netlify, managed with kanban project in GitHub.
+**[[View site]](https://aron-hd.netlify.app/projects)**
 
-### Styling
+Built with Gatsby, Contentful and GraphQL, deployed via Netlify, managed with kanban project in GitHub. I've detailed the process in my [project blog](https://aron-hd.netlify.app/projects/personal-website).
 
-Using a mixture of css modules for basic layout and styled components for component functionality.
+### Planned releases
 
-Providing a theme with theme-ui so for a theme switching button and consistent styling.
-
-### Content delivery
-
-Delivered through Contentful CMS for easy managing of content and content models.
-
-Test.
+- v1.1
