@@ -1,4 +1,5 @@
 .menu {
+  border: 8px;
   all: revert;
   display: grid;
   /* flex-flow: column nowrap; */
@@ -16,7 +17,6 @@
   /* transition: transform 0.3s ease-in-out; */
   transition: all ease-in-out 0.3s;
   z-index: -1;
-  
 }
 
 .menu ul {
