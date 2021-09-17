@@ -24,8 +24,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Aron Hayes Davidson`,
+        short_name: `Aron HD`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
