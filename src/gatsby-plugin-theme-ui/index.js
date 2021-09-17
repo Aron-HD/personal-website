@@ -107,6 +107,13 @@ const theme = {
         color: "text",
       },
     },
+    socialIcon: {
+      a: {
+        svg: {
+          fill: "secondary",
+        },
+      },
+    },
     pre: {
       fontFamily: "monospace",
       overflowX: "auto",
