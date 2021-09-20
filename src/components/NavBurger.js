@@ -10,9 +10,7 @@ const StyledBurger = styled.div`
   flex-flow: column nowrap;
   width: 2rem;
   height: 2rem;
-  /* position: fixed; */
-  top: 40px;
-  right: 40px;
+  position: relative;
   z-index: 20;
 
   div {
