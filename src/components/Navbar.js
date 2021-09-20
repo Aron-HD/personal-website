@@ -1,13 +1,18 @@
 import React from "react"
 import NavBurger from "./NavBurger"
+import styled from "styled-components"
 
-import * as styles from "../styles/NavClosed.module.css"
+const StyledNav = styled.nav`
+  position: relative;
+  z-index: 100;
+  padding: 9px;
+`
 
 const NavClosed = () => {
   return (
-    <nav className={styles.navbar}>
+    <StyledNav>
       <NavBurger />
-    </nav>
+    </StyledNav>
   )
 }
 

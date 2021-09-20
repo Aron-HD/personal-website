@@ -14,7 +14,6 @@ import Helmet from "react-helmet"
 import favicon from "../images/favicon.ico"
 import Header from "./Header"
 import Social from "./Social"
-import ThemeSwitcher from "./Theme-switcher"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -32,7 +31,6 @@ const Layout = ({ children }) => {
       <Helmet>
         <link rel="icon" href={favicon} />
       </Helmet>
-      <ThemeSwitcher />
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <div>
         <main sx={{ m: "1rem" }}>{children}</main>
