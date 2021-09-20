@@ -2,18 +2,20 @@ const theme = {
   useCustomProperties: true,
   initialColorMode: "light",
   colors: {
-    text: "#230C0F", // Black
+    text: "#242121", // Black
     background: "#fff", // White
-    primary: "#da627d", // Blush
-    secondary: "#FFD670", // Orange
-    muted: "#e7e4e4", // Grey
+    primary: "#ff2047", // Blush
+    secondary: "#F8C25C", // Orange
+    muted: "#f8f3e3", // Grey
+    accent: "#",
     modes: {
       dark: {
         text: "#fff", // White
-        background: "#353535", // Dark Purple
-        primary: "#FFD670", // Orange
-        secondary: "#da627d", // Blush
-        muted: "#4d4d4d", // Dark Grey
+        background: "#292929", // Jet
+        primary: "#ff2047", // Orange
+        secondary: "#ffa62b", // Rust
+        muted: "#3d3d3d", // Dark Grey
+        accent: "#B8C4BB",
       },
     },
   },
@@ -103,6 +105,13 @@ const theme = {
       "&:hover": {
         fontWeight: "bold",
         color: "text",
+      },
+    },
+    socialIcon: {
+      a: {
+        svg: {
+          fill: "secondary",
+        },
       },
     },
     pre: {

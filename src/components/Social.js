@@ -1,34 +1,65 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
+import styled from "styled-components"
 
-import * as styles from "../styles/Social.module.css"
+import Github from "./Icons/Github"
+import Linkedin from "./Icons/Linkedin"
+
+const StyledSocial = styled.ul`
+  padding-left: 0;
+  list-style: none;
+  background: 0 0;
+  transition: all 0.3s ease-in-out;
+  li {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    padding-left: 5px;
+    padding-right: 5px;
+    -webkit-animation: fade-in-down 0.9s;
+    animation: fade-in-down 0.9s;
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s;
+    /* a:hover {
+    } */
+  }
+  /* Animations  */
+  @-webkit-keyframes fade-in-down {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(-10px);
+      transform: translateY(-10px);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+  }
+  @keyframes fade-in-down {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(-10px);
+      transform: translateY(-10px);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+  }
+`
 
 const Social = () => {
   return (
-    <ul className={`${styles.listInline} ${styles.socialLinks}`}>
-      <li>
-        <a
-          sx={{ variant: "styles.a" }}
-          href="https://github.com/aron-hd"
-          className={`${styles.btnSocial} ${styles.btnOutline}`}
-          data-toggle="tooltip"
-          data-placement="top"
-          title="Github"
-        >
-          <i className="icon ion-social-github">G</i>
-        </a>
+    <StyledSocial>
+      <li sx={{ variant: "styles.socialIcon" }}>
+        <Github />
       </li>
-      <li>
-        <a
-          sx={{ variant: "styles.a" }}
-          href="https://uk.linkedin.com/in/aron-hd"
-          className={`${styles.btnSocial} ${styles.btnOutline}`}
-          title="LinkedIn"
-        >
-          <i className="icon ion-social-linkedin">L</i>
-        </a>
+      <li sx={{ variant: "styles.socialIcon" }}>
+        <Linkedin />
       </li>
-    </ul>
+    </StyledSocial>
   )
 }
 
