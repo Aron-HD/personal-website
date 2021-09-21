@@ -14,8 +14,17 @@ p.featured {
     text-align: center;
     align-content: center;
     align-items: center;
-    
+
 }
 .body {
     text-align: inherit;
+}
+
+@media (max-width: 600px) {
+    .content {
+        margin: 0;
+    }
+    .content ul {
+        padding-inline-start: 20px;
+    }
 }
