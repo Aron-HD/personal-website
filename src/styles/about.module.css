@@ -1,0 +1,57 @@
+.container {
+    display: flex;
+    text-align: left;
+    margin: 20px 15%;
+}
+
+.headshot {
+    display: inline-block;
+    border-radius: 50%;
+    margin: 5px;
+    padding: 5px;
+    height: 500;
+    width: 500;
+
+}
+.outerBox {
+    display: flex;
+    flex-direction: column;
+}
+.box {
+    margin: 0 5px;
+    padding: 0 5px;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+}
+
+.box ul {
+    list-style: none;
+    padding-inline-start: 20px;
+}
+
+.box .bio {
+    height: 100%;
+    width: 50%;
+    text-decoration: none;
+}
+
+@media (max-width: 600px) {
+    .container {
+        flex-direction: column;
+        margin: 0;
+    }
+    .box {
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+    }
+    .box ul {
+        padding-inline-start: 0;
+    }
+    .box .bio {
+        margin: 0;
+        width: 100%;
+    }
+
+}
