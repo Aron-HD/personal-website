@@ -23,7 +23,7 @@ export const query = graphql`
           placeholder: BLURRED
           quality: 20
           layout: CONSTRAINED
-          formats: [PNG, JPG, WEBP, AUTO]
+          formats: [AUTO, WEBP]
         )
       }
       body {
@@ -63,8 +63,12 @@ const Project = props => {
               tags.map((tag, index) => (
                 <div
                   sx={{
+                    color: "text",
+                    fontWeight: "bold",
+                    borderColor: "muted",
                     border: "1px solid",
-                    borderColor: "primary",
+                    borderRadius: "5%",
+                    bg: "secondary",
                   }}
                   key={index}
                   className={styles.tag}
