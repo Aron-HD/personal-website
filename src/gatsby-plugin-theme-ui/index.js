@@ -91,7 +91,6 @@ const theme = {
     },
     a: {
       color: "primary",
-      // bg: "secondary",
       fontWeight: "bold",
       textDecoration: "none",
       "&:hover": {
@@ -99,11 +98,6 @@ const theme = {
         color: "text",
         transition: "color 0.2s ease",
       },
-    },
-    "a:hover, button:hover, div:hover, svg:hover": {
-      color: "text",
-      transition: "all 0.3s ease",
-      cursor: "pointer",
     },
     button: {
       color: "secondary",
