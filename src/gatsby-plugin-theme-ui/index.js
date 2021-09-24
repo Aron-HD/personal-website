@@ -3,17 +3,17 @@ const theme = {
   initialColorMode: "light",
   colors: {
     text: "#242121", // Black
-    background: "#fff", // White
+    background: "#FBFAF5", // White
     primary: "#ff2047", // Blush
-    secondary: "#F8C25C", // Orange
+    secondary: "#ff3673", // Orange
     muted: "#f8f3e3", // Grey
     accent: "#",
     modes: {
       dark: {
-        text: "#fff", // White
+        text: "#FBFAF5", // White
         background: "#292929", // Jet
-        primary: "#ff2047", // Orange
-        secondary: "#ffa62b", // Rust
+        primary: "#ff2047", // Red
+        secondary: "#ff3673", // Pink
         muted: "#3d3d3d", // Dark Grey
         accent: "#B8C4BB",
       },
@@ -92,25 +92,52 @@ const theme = {
     a: {
       color: "primary",
       // bg: "secondary",
+      fontWeight: "bold",
       textDecoration: "none",
       "&:hover": {
         fontWeight: "bold",
         color: "text",
-        textDecoration: "underline",
+        transition: "color 0.2s ease",
       },
     },
+    "a:hover, button:hover, div:hover, svg:hover": {
+      color: "text",
+      transition: "all 0.3s ease",
+      cursor: "pointer",
+    },
     button: {
-      color: "primary",
-      bg: "secondary",
+      color: "secondary",
+      borderRadius: "10%",
+      padding: "2px 4px",
+      bg: "muted",
+      fontWeight: "bold",
       "&:hover": {
         fontWeight: "bold",
         color: "text",
+        transition: "all 0.3s ease",
+        transform: "scale(1.025)",
+      },
+    },
+    altButton: {
+      bg: "primary",
+      "&:hover": {
+        bg: "text",
+        transition: "all 0.3s ease",
       },
     },
     socialIcon: {
       a: {
         svg: {
-          fill: "secondary",
+          position: "relative",
+          top: "0",
+          fill: "primary",
+        },
+        "&:hover": {
+          svg: {
+            fill: "text",
+            top: "-5px",
+            transition: "all 0.2s ease",
+          },
         },
       },
     },
