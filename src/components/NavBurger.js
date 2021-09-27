@@ -36,10 +36,16 @@ const NavBurger = () => {
   const [open, setOpen] = useState(false)
   return (
     <Fragment>
-      <StyledBurger open={open} onClick={() => setOpen(!open)}>
-        <div sx={{ bg: "primary" }} />
-        <div sx={{ bg: "primary" }} />
-        <div sx={{ bg: "primary" }} />
+      <StyledBurger
+        sx={{
+          "&:hover": { div: { bg: "text" } },
+        }}
+        open={open}
+        onClick={() => setOpen(!open)}
+      >
+        <div sx={{ variant: "styles.altButton" }} />
+        <div sx={{ variant: "styles.altButton" }} />
+        <div sx={{ variant: "styles.altButton" }} />
       </StyledBurger>
       <NavMenu open={open} />
     </Fragment>

@@ -27,23 +27,28 @@ const StyledHeader = styled.header`
       padding: 0;
     }
   }
- `
+`
 
 const Header = ({ siteTitle }) => {
   return (
-    <StyledHeader sx={{ bg: "secondary"  }}>
-        <ThemeSwitcher />
-        <h1 sx={{ variant: "styles.h1" }}>
-          <Link
-            to="/"
-            sx={{
-              variant: "styles.a",
-            }}
-          >
-            {siteTitle}
-          </Link>
-        </h1>
-        <Navbar />
+    <StyledHeader
+      sx={{
+        borderBottom: "thin solid",
+        borderColor: "secondary",
+      }}
+    >
+      <ThemeSwitcher />
+      <h1 sx={{ variant: "styles.h1" }}>
+        <Link
+          to="/"
+          sx={{
+            variant: "styles.a",
+          }}
+        >
+          {siteTitle}
+        </Link>
+      </h1>
+      <Navbar />
     </StyledHeader>
   )
 }

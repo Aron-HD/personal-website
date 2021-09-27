@@ -20,6 +20,11 @@
   justify-items: center;
 }
 
+.projects a:hover {
+  transition: transform 200ms;
+  transform: scale(1.025);
+}
+
 .projectCard {
   display: grid;
   margin: 20px 20px;

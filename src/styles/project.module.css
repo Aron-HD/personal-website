@@ -1,21 +1,62 @@
 .content {
-    text-align: left;
-    margin-left: 30%;
-    margin-right: 30%;
+  text-align: left;
+  margin-left: 30%;
+  margin-right: 30%;
 }
 
 .content h1 {
-    text-align: center;
+  text-align: center;
 }
-.meta {
-    text-decoration: none;
+
+section {
+  margin-top: 10px;
 }
-p.featured {
-    text-align: center;
-    align-content: center;
-    align-items: center;
-    
+
+.articleMetadata {
+  display: flex;
+}
+
+.articleMetadata > div {
+  width: 50%;
+  flex-direction: row;
+}
+
+.frontmatter a {
+  text-decoration: underline;
+  color: rgb(38, 103, 224);
+}
+
+.tagsWrapper {
+  display: inline-block;
+  justify-content: flex-end;
+  text-align: right;
+}
+.tag {
+  display: inline-block;
+  text-transform: uppercase;
+  margin: 2px;
+  padding: 0px 4px;
+
+  font-size: small;
+}
+.featured {
+  text-align: center;
+  align-content: center;
+  align-items: center;
 }
 .body {
-    text-align: inherit;
+  text-align: inherit;
+}
+.body img {
+  max-width: 100%;
+}
+
+@media (max-width: 600px) {
+  .content {
+    margin: 0;
+  }
+  .content ul,
+  ol {
+    padding-inline-start: 30px;
+  }
 }
