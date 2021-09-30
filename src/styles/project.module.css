@@ -33,11 +33,8 @@ section {
 }
 .tag {
   display: inline-block;
-  text-transform: uppercase;
   margin: 2px;
   padding: 0px 4px;
-
-  font-size: small;
 }
 .featured {
   text-align: center;
