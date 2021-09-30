@@ -1,3 +1,6 @@
+main {
+  padding: 0 40px;
+}
 .portfolio {
   text-align: center;
 }
@@ -27,10 +30,9 @@
 
 .projectCard {
   display: grid;
-  margin: 20px 20px;
+  margin: 20px 0px;
   width: 450px;
   align-items: center;
-  justify-items: center;
 
   /* Add shadows to create the "card" effect */
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
@@ -46,12 +48,13 @@
     margin: 0;
   }
   .projectCard {
-    margin: 20px 20px;
+    /* margin: 20px 20px; */
+
     width: 400px;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 990px) {
   main {
     margin: 0;
   }
@@ -65,10 +68,15 @@
   .projectCard {
     display: grid;
     margin: 0px;
-    width: 280px;
-    height: 500;
+    width: 400px;
     align-items: center;
     justify-items: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .projectCard {
+    width: 280px;
   }
 }
 
@@ -102,8 +110,24 @@
 
 .meta {
   text-decoration: none;
+  display: flex;
+  flex-direction: column;
 }
 
 .excerpt {
   text-decoration: none;
+}
+
+.tagsWrapper {
+  display: inline-block;
+  justify-content: center;
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.tag {
+  display: inline-block;
+  margin: 2px;
+  padding: 0px 4px;
+  /* color: #7b867e */
 }

@@ -5,6 +5,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 import Layout from "../components/Layout"
 import Seo from "../components/Seo"
+import SourceCode from "../components/Icons/SourceCode"
 
 import * as styles from "../styles/projects.module.css"
 
@@ -18,7 +19,8 @@ const Projects = () => {
               title
               id
               slug
-              publishDate(formatString: "DD MMM, YYYY")
+              gitHubLink
+              tags
               heroImage {
                 gatsbyImageData(
                   aspectRatio: 1.5
@@ -49,12 +51,19 @@ const Projects = () => {
           return (
             <Link to={`/projects/${edge.node.slug}/`}>
               <div
-                sx={{ bg: "muted" }}
+                sx={{
+                  bg: "muted",
+                  color: "accent",
+                  borderColor: "muted",
+                  border: "0.5px solid",
+                  borderRadius: "1%",
+                }}
                 className={styles.projectCard}
                 key={edge.node.id}
               >
                 {edge.node.heroImage && (
                   <GatsbyImage
+                    sx={{ borderRadius: "1% 1% 0% 0%" }}
                     className={styles}
                     image={getImage(edge.node.heroImage)}
                     alt={edge.node.title}
@@ -62,18 +71,32 @@ const Projects = () => {
                 )}
                 <div className={styles.container}>
                   <h2 sx={{ variant: "styles.h2" }}>{edge.node.title}</h2>
-                  <div className={styles.meta}>
-                    <span>Posted: {edge.node.publishDate}</span>
-                  </div>
                   <p sx={{ variant: "styles.p" }} className={styles.excerpt}>
                     {edge.node.description.childMarkdownRemark.excerpt}
                   </p>
-                  <button
-                    sx={{ variant: "styles.button" }}
-                    className={styles.button}
-                  >
-                    <Link to={`/projects/${edge.node.slug}/`}>Read</Link>
-                  </button>
+                  <div className={styles.meta}>
+                    <a sx={{ variant: "styles.a" }} href={edge.node.gitHubLink}>
+                      <SourceCode />
+                    </a>
+                    <div className={styles.tagsWrapper}>
+                      {edge.node.tags &&
+                        edge.node.tags.map((tag, index) => (
+                          <pre
+                            sx={{
+                              color: "accent",
+                              borderColor: "muted",
+                              border: "0.5px solid",
+                              borderRadius: "5%",
+                              bg: "muted",
+                            }}
+                            key={index}
+                            className={styles.tag}
+                          >
+                            #{tag}
+                          </pre>
+                        ))}
+                    </div>
+                  </div>
                 </div>
               </div>
             </Link>
