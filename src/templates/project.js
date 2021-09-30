@@ -61,20 +61,19 @@ const Project = props => {
           <div className={styles.tagsWrapper}>
             {tags &&
               tags.map((tag, index) => (
-                <div
+                <pre
                   sx={{
-                    color: "text",
-                    fontWeight: "bold",
+                    color: "accent",
                     borderColor: "muted",
                     border: "1px solid",
                     borderRadius: "5%",
-                    bg: "secondary",
+                    bg: "muted",
                   }}
                   key={index}
                   className={styles.tag}
                 >
-                  {tag}
-                </div>
+                  #{tag}
+                </pre>
               ))}
           </div>
         </section>
