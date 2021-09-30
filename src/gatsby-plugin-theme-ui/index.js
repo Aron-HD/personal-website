@@ -7,7 +7,7 @@ const theme = {
     primary: "#ff2047", // Blush
     secondary: "#ff3673", // Orange
     muted: "#f8f3e3", // Grey
-    accent: "#",
+    accent: "#7b867e",
     modes: {
       dark: {
         text: "#FBFAF5", // White
@@ -22,14 +22,16 @@ const theme = {
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fonts: {
     body: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
-    heading: "inherit",
-    monospace: "Menlo, monospace",
+    heading: '"Open Sans", sans-serif',
+    subHeading: "Monteserrat, sans-serif",
+    monospace: '"Roboto Mono", Menlo, monospace',
   },
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96],
   fontWeights: {
     body: 400,
-    heading: 700,
+    heading: 800,
     bold: 700,
+    subHeading: 100,
   },
   lineHeights: {
     body: 1.5,
@@ -57,28 +59,28 @@ const theme = {
     },
     h3: {
       color: "text",
-      fontFamily: "heading",
+      fontFamily: "subHeading",
       lineHeight: "heading",
-      fontWeight: "heading",
+      fontWeight: "subHeading",
       fontSize: 3,
     },
     h4: {
       color: "text",
-      fontFamily: "heading",
+      fontFamily: "subHeading",
       lineHeight: "heading",
       fontWeight: "heading",
       fontSize: 2,
     },
     h5: {
       color: "text",
-      fontFamily: "heading",
+      fontFamily: "subHeading",
       lineHeight: "heading",
       fontWeight: "heading",
       fontSize: 1,
     },
     h6: {
       color: "text",
-      fontFamily: "heading",
+      fontFamily: "subHeading",
       lineHeight: "heading",
       fontWeight: "heading",
       fontSize: 0,
@@ -91,10 +93,8 @@ const theme = {
     },
     a: {
       color: "primary",
-      fontWeight: "bold",
       textDecoration: "none",
       "&:hover": {
-        fontWeight: "bold",
         color: "text",
         transition: "color 0.2s ease",
       },
