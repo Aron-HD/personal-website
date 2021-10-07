@@ -10,10 +10,10 @@ import "../styles/global.css"
 
 const IndexPage = () => (
   <Layout>
-    <Seo title="Home" />
-    <h2 sx={{ variant: "styles.h2" }}>Software Developer</h2>
-    <h3 sx={{ variant: "styles.h3" }}>Portfolio & blog site</h3>
-    {/* <StaticImage
+      <Seo title="Home" />
+      <h2 sx={{ variant: "styles.logo" }}>Software Developer</h2>
+      <h3 sx={{ variant: "styles.h3" }}>Portfolio & blog site</h3>
+      {/* <StaticImage
       src="../images/gatsby-astronaut.png"
       width={300}
       quality={95}

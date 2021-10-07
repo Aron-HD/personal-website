@@ -43,6 +43,12 @@ const theme = {
       lineHeight: "body",
       fontWeight: "body",
     },
+    logo: {
+      color: "primary",
+      fontFamily: "heading",
+      lineHeight: "heading",
+      fontSize: 6,
+    },
     h1: {
       color: "primary",
       fontFamily: "heading",
