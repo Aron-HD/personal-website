@@ -53,9 +53,6 @@ const Projects = () => {
               <div
                 sx={{
                   bg: "muted",
-                  color: "accent",
-                  borderColor: "muted",
-                  border: "0.5px solid",
                   borderRadius: "1%",
                 }}
                 className={styles.projectCard}
