@@ -1,6 +1,3 @@
-main {
-  padding: 0 40px;
-}
 .portfolio {
   text-align: center;
 }
@@ -23,7 +20,7 @@ main {
   justify-items: center;
 }
 
-.projects a:hover {
+.projects .projectCard:hover {
   transition: transform 200ms;
   transform: scale(1.025);
 }
@@ -112,6 +109,7 @@ main {
   text-decoration: none;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .excerpt {
@@ -130,4 +128,9 @@ main {
   margin: 2px;
   padding: 0px 4px;
   /* color: #7b867e */
+}
+
+.sourceCode {
+  display: block;
+  width: 50px;
 }

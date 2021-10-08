@@ -15,6 +15,8 @@ import favicon from "../images/favicon.ico"
 import Header from "./Header"
 import Social from "./Social"
 
+import "../styles/global.css"
+
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -32,15 +34,10 @@ const Layout = ({ children }) => {
         <link rel="icon" href={favicon} />
       </Helmet>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div>
-        <main sx={{ m: "1rem" }}>{children}</main>
-        <footer sx={{ m: "1rem" }}>
-          © {data.site.siteMetadata?.title}, {new Date().getFullYear()}
-          <br />
-          [built with Gatsby & Contentful]
-          <Social />
-        </footer>
-      </div>
+      <main>{children}</main>
+      <footer>
+        <Social />© {data.site.siteMetadata?.title}, {new Date().getFullYear()}
+      </footer>
     </Fragment>
   )
 }
