@@ -49,14 +49,17 @@ const Projects = () => {
       <section className={styles.projects}>
         {data.allContentfulBlogPost.edges.map(edge => {
           return (
-            <Link to={`/projects/${edge.node.slug}/`}>
-              <div
-                sx={{
-                  bg: "muted",
-                  borderRadius: "1%",
-                }}
-                className={styles.projectCard}
-                key={edge.node.id}
+            <div
+              sx={{
+                bg: "muted",
+                borderRadius: "1%",
+              }}
+              className={styles.projectCard}
+              key={edge.node.id}
+            >
+              <Link
+                sx={{ variant: "styles.a" }}
+                to={`/projects/${edge.node.slug}/`}
               >
                 {edge.node.heroImage && (
                   <GatsbyImage
@@ -66,6 +69,7 @@ const Projects = () => {
                     alt={edge.node.title}
                   />
                 )}
+	       </Link>
                 <div className={styles.container}>
                   <h2 sx={{ variant: "styles.h2" }}>{edge.node.title}</h2>
                   <p sx={{ variant: "styles.p" }} className={styles.excerpt}>
@@ -96,7 +100,7 @@ const Projects = () => {
                   </div>
                 </div>
               </div>
-            </Link>
+            </div>
           )
         })}
       </section>
