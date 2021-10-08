@@ -1,6 +1,12 @@
 # notes > contentful
 *-project.md
+notes.md
 
+# contentful import / export config for updating content between space environments (e.g. staging > master)
+config-import.json
+config-export.json
+!contentful-management
+contentful-exports/
 
 # Logs
 logs
