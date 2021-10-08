@@ -19,3 +19,22 @@ footer {
 main {
   min-height: 60vh;
 }
+
+html,
+body {
+  height: 100%;
+}
+/* to hide but allow vertical scroll */
+
+html {
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+}
+
+html::-webkit-scrollbar {
+  width: 0px; /* For Chrome, Safari, and Opera */
+}
+
+body {
+  overflow-x: hidden; /* to hide side scrollbar */
+}
