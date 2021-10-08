@@ -69,34 +69,44 @@ const Projects = () => {
                     alt={edge.node.title}
                   />
                 )}
-	       </Link>
-                <div className={styles.container}>
-                  <h2 sx={{ variant: "styles.h2" }}>{edge.node.title}</h2>
+              </Link>
+              <div className={styles.container}>
+                <Link
+                  sx={{ variant: "styles.a" }}
+                  to={`/projects/${edge.node.slug}/`}
+                >
+                  <h2 sx={{ variant: "styles.a" }}>{edge.node.title}</h2>
                   <p sx={{ variant: "styles.p" }} className={styles.excerpt}>
                     {edge.node.description.childMarkdownRemark.excerpt}
                   </p>
-                  <div className={styles.meta}>
-                    <a sx={{ variant: "styles.a" }} href={edge.node.gitHubLink}>
-                      <SourceCode />
-                    </a>
-                    <div className={styles.tagsWrapper}>
-                      {edge.node.tags &&
-                        edge.node.tags.map((tag, index) => (
-                          <pre
-                            sx={{
-                              color: "accent",
-                              borderColor: "muted",
-                              border: "0.5px solid",
-                              borderRadius: "5%",
-                              bg: "muted",
-                            }}
-                            key={index}
-                            className={styles.tag}
-                          >
-                            #{tag}
-                          </pre>
-                        ))}
-                    </div>
+                </Link>
+                <div className={styles.meta}>
+                  <a
+                    className={styles.sourceCode}
+                    sx={{ variant: "styles.a" }}
+                    href={edge.node.gitHubLink}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                  >
+                    <SourceCode />
+                  </a>
+                  <div className={styles.tagsWrapper}>
+                    {edge.node.tags &&
+                      edge.node.tags.map((tag, index) => (
+                        <pre
+                          sx={{
+                            color: "accent",
+                            borderColor: "muted",
+                            border: "0.5px solid",
+                            borderRadius: "5%",
+                            bg: "muted",
+                          }}
+                          key={index}
+                          className={styles.tag}
+                        >
+                          #{tag}
+                        </pre>
+                      ))}
                   </div>
                 </div>
               </div>
