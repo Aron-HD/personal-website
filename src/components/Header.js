@@ -15,6 +15,7 @@ const StyledHeader = styled.header`
   margin: 0 auto;
   width: 100vw;
   padding: 1.45rem 1.0875rem;
+  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.2);
   h1 {
     width: 90vw;
     margin: 0;
@@ -22,7 +23,7 @@ const StyledHeader = styled.header`
 
   @media (max-width: 600px) {
     display: inline-flex;
-    padding: 5px 0px 5px 0px;
+    padding: 20px 0px;
     h1 {
       padding: 0;
     }
@@ -31,12 +32,7 @@ const StyledHeader = styled.header`
 
 const Header = ({ siteTitle }) => {
   return (
-    <StyledHeader
-      sx={{
-        borderBottom: "thin solid",
-        borderColor: "secondary",
-      }}
-    >
+    <StyledHeader>
       <ThemeSwitcher />
       <h1 sx={{ variant: "styles.h1" }}>
         <Link
