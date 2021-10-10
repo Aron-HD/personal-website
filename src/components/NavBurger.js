@@ -38,7 +38,7 @@ const NavBurger = () => {
     <Fragment>
       <StyledBurger
         sx={{
-          "&:hover": { div: { bg: "text" } },
+          "&:hover": { div: { bg: "primary" } },
         }}
         open={open}
         onClick={() => setOpen(!open)}

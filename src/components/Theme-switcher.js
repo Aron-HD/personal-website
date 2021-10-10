@@ -24,16 +24,16 @@ const ThemeSwitcher = () => {
   return (
     <StyledThemeButton
       sx={{
-        color: "primary",
+        color: "secondary",
         "&:hover": {
           transition: "all 0.3s ease",
-          color: "text",
+          color: "primary",
         },
       }}
       onClick={() => setColorMode(nextColorMode)}
     >
       {colorMode === "light" ? (
-        <SunIcon sx={{ fill: "white" }} />
+        <SunIcon sx={{ fill: "secondary" }} />
       ) : (
         <MoonIcon />
       )}
