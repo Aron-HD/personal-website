@@ -45,13 +45,19 @@ const Project = props => {
   return (
     <Layout>
       <Seo title={props.data.contentfulBlogPost.title} />
-      <Link to="/projects/">{`<-`} Projects page</Link>
+      <Link
+        sx={{ variant: "styles.a" }}
+        className={styles.returnLink}
+        to="/projects/"
+      >
+        {`<`} Projects
+      </Link>
       <article className={styles.content}>
         <h1 sx={{ variant: "styles.h1" }}>
           {props.data.contentfulBlogPost.title}
         </h1>
         <section className={styles.articleMetadata}>
-          <div className={styles.frontmatter}>
+          <div>
             <b>{author}</b>
             <br />
             <em>{pubDate}</em>

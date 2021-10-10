@@ -4,16 +4,16 @@ const theme = {
   colors: {
     text: "#242121", // Black
     background: "#FBFAF5", // White
-    primary: "#ff2047", // Blush
-    secondary: "#ff3673", // Orange
+    primary: "#292929", // Red
+    secondary: "#B8C4BB", // Orange
     muted: "#f8f3e3", // Grey
     accent: "#7b867e",
     modes: {
       dark: {
         text: "#FBFAF5", // White
         background: "#292929", // Jet
-        primary: "#ff2047", // Red
-        secondary: "#ff3673", // Pink
+        primary: "#FFD900", // Yellow
+        secondary: "#fffbbf", // Light yellow
         muted: "#3d3d3d", // Dark Grey
         accent: "#B8C4BB",
       },
@@ -101,7 +101,7 @@ const theme = {
       color: "primary",
       textDecoration: "none",
       "&:hover": {
-        color: "text",
+        color: "secondary",
         transition: "color 0.2s ease",
       },
     },
@@ -113,15 +113,15 @@ const theme = {
       fontWeight: "bold",
       "&:hover": {
         fontWeight: "bold",
-        color: "text",
+        color: "primary",
         transition: "all 0.3s ease",
         transform: "scale(1.025)",
       },
     },
     altButton: {
-      bg: "primary",
+      bg: "secondary",
       "&:hover": {
-        bg: "text",
+        bg: "primary",
         transition: "all 0.3s ease",
       },
     },
@@ -130,11 +130,11 @@ const theme = {
         svg: {
           position: "relative",
           top: "0",
-          fill: "primary",
+          fill: "secondary",
         },
         "&:hover": {
           svg: {
-            fill: "text",
+            fill: "primary",
             top: "-5px",
             transition: "all 0.2s ease",
           },

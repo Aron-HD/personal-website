@@ -18,7 +18,7 @@ const StyledMenu = styled.div`
     top: 0;
     right: 0;
     height: 100vh;
-    width: 20vw;
+    width: 30vw;
     padding: 40px;
     ul {
       display: grid;
@@ -42,43 +42,46 @@ const StyledMenu = styled.div`
     }
   }
 
-@media (max-width: 600px) {
-  all: revert;
-  .menu {
-    display: grid;
-    grid-template-columns: 1fr;
-    padding: 0;
-    margin: 0;
-    width: 86%;
-    height: 100%;
-    justify-items: center;
-    ul {
+  @media (max-width: 600px) {
+    all: revert;
+    .menu {
+      display: grid;
+      grid-template-columns: 1fr;
       padding: 0;
       margin: 0;
-      list-style-type: none;
-      margin-right: 40px;
-
+      width: 100%;
+      height: 100%;
+      justify-items: center;
+      ul {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+        margin-right: 40px;
+      }
     }
   }
-}
-
-
 `
 
 const NavMenu = ({ open }) => {
   return (
     <StyledMenu>
       {open && (
-        <div sx={{ bg: "muted" }} className="menu">
+        <div sx={{ bg: "accent" }} className="menu">
           <ul>
             <li sx={{ variant: "styles.a" }}>
-              <Link to="/projects">Projects</Link>
+              <Link to="/projects">
+                <h4>Projects</h4>
+              </Link>
             </li>
             <li sx={{ variant: "styles.a" }}>
-              <Link to="/about">About</Link>
+              <Link to="/about">
+                <h4>About</h4>
+              </Link>
             </li>
             <li sx={{ variant: "styles.a" }}>
-              <Link to="/contact">Contact</Link>
+              <Link to="/contact">
+                <h4>Contact</h4>
+              </Link>
             </li>
             {/* <li sx={{ color: "primary" }}>
           <Link to="/blogs">Blogs</Link>

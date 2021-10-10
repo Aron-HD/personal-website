@@ -43,9 +43,6 @@ const Projects = () => {
   return (
     <Layout>
       <Seo title="Projects" />
-      <p>
-        <Link to="/">{`<-`} Return to home</Link>
-      </p>
       <section className={styles.projects}>
         {data.allContentfulBlogPost.edges.map(edge => {
           return (
@@ -83,7 +80,7 @@ const Projects = () => {
                 <div className={styles.meta}>
                   <a
                     className={styles.sourceCode}
-                    sx={{ variant: "styles.a" }}
+                    sx={{ variant: "styles.button" }}
                     href={edge.node.gitHubLink}
                     target="_blank"
                     rel="noreferrer noopener"
@@ -96,10 +93,10 @@ const Projects = () => {
                         <pre
                           sx={{
                             color: "accent",
-                            borderColor: "muted",
+                            borderColor: "accent",
                             border: "0.5px solid",
                             borderRadius: "5%",
-                            bg: "muted",
+                            bg: "inherit",
                           }}
                           key={index}
                           className={styles.tag}
