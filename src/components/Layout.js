@@ -12,6 +12,7 @@ import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 
 import favicon from "../images/favicon.ico"
+import logo from "../images/my-logo.svg"
 import Header from "./Header"
 import Social from "./Social"
 
@@ -31,6 +32,7 @@ const Layout = ({ children }) => {
   return (
     <Fragment>
       <Helmet>
+        <link rel="icon" href={logo} />
         <link rel="icon" href={favicon} />
       </Helmet>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
