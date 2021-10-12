@@ -11,7 +11,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 
-import favicon from "../images/favicon.ico"
+// import favicon from "../images/favicon.ico"
 import logo from "../images/my-logo.svg"
 import Header from "./Header"
 import Social from "./Social"
@@ -33,7 +33,7 @@ const Layout = ({ children }) => {
     <Fragment>
       <Helmet>
         <link rel="icon" href={logo} />
-        <link rel="icon" href={favicon} />
+        {/* <link rel="icon" href={favicon} /> */}
       </Helmet>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <main>{children}</main>
