@@ -23,8 +23,8 @@ const IndexPage = () => (
       style={{ marginBottom: `1.45rem` }}
     /> */}
       <p sx={{ variant: "styles.p" }}>
-        <button sx={{ variant: "styles.button" }}>
-          <Link to="/projects/">View projects</Link>
+        <button className={styles.projectButton} sx={{ variant: "styles.button" }}>
+          <Link to="/projects/">Projects</Link>
         </button>
       </p>
     </div>

@@ -7,7 +7,13 @@ main {
 h2 {
   margin-block-end: 0;
 }
-
+button.projectButton {
+  font-size: medium;
+  border: 1px solid #525252a8;
+  border-radius: 8px;
+  box-shadow: 0 2px 2px #41414141;
+  padding: 9px 11px;
+}
 .container {
   text-align: left;
   display: grid;
