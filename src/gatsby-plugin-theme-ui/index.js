@@ -107,8 +107,6 @@ const theme = {
     },
     button: {
       color: "secondary",
-      borderRadius: "10%",
-      padding: "2px 4px",
       bg: "muted",
       fontWeight: "bold",
       "&:hover": {
