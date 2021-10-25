@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, useColorMode } from "theme-ui"
-import styled from "styled-components"
+import styled from "@emotion/styled"
 import SunIcon from "./Icons/Sun"
 import MoonIcon from "./Icons/Moon"
 

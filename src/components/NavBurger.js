@@ -2,7 +2,7 @@
 import { jsx } from "theme-ui"
 import { Fragment, useState } from "react"
 import NavMenu from "./NavMenu"
-import styled from "styled-components"
+import styled from "@emotion/styled"
 
 const StyledBurger = styled.div`
   display: flex;
