@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
-import styled from "styled-components"
+import styled from "@emotion/styled"
 import { Link } from "gatsby"
 // import Social from "../Social"
 
