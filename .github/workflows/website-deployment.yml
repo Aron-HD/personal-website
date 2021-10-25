@@ -6,13 +6,13 @@ name: Node.js CI
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
+#   pull_request:
+#     branches: [ main ]
 
 jobs:
   build:
     environment:
-      name: develop
+      name: production
 
     runs-on: ubuntu-latest
 
