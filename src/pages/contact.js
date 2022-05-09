@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import {
-  Box,
   Button,
   Container,
   Flex,
@@ -16,9 +15,9 @@ import Seo from "../components/Seo"
 import SectionTitle from "../components/SectionTitle"
 
 const FieldSet = ({ children }) => (
-  <Box as="fieldset" sx={{ border: "none", p: 0 }}>
+  <Grid as="fieldset" sx={{ border: "none", p: 0, gap: 1 }}>
     {children}
-  </Box>
+  </Grid>
 )
 
 const ContactPage = forwardRef((props, ref) => {
@@ -70,7 +69,7 @@ const ContactPage = forwardRef((props, ref) => {
       >
         <Flex
           sx={{
-            width: "80%",
+            width: ["100%", "80%"],
             height: "80%",
             justifyContent: "start",
             alignItems: "start",
@@ -87,7 +86,7 @@ const ContactPage = forwardRef((props, ref) => {
             }}
           >
             <Grid
-              sx={{ width: "50%" }}
+              sx={{ width: ["100%", "400px", null, "50%"] }}
               ref={contactForm}
               as="form"
               name="Contact Form"
