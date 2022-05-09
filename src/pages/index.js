@@ -28,6 +28,7 @@ const IndexPage = () => {
       <Seo title="Home" />
       {/* Home */}
       <Container
+        id="home"
         ref={homeRef}
         as="section"
         sx={{

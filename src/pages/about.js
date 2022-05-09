@@ -43,6 +43,7 @@ const AboutPage = forwardRef((props, ref) => {
     <Fragment>
       <Seo title="About" />
       <Container
+        id="about"
         as="section"
         sx={{
           display: "flex",

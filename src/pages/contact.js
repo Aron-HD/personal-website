@@ -59,6 +59,7 @@ const ContactPage = forwardRef((props, ref) => {
     <Fragment>
       <Seo title={pageName} />
       <Container
+        id="contact"
         as="section"
         sx={{
           display: "flex",

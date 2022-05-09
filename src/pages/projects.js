@@ -42,6 +42,7 @@ const Projects = forwardRef((props, ref) => {
     <Fragment>
       <Seo title="Projects" />
       <Container
+        id="projects"
         as="section"
         ref={ref}
         sx={{
