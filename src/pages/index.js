@@ -1,34 +1,64 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
-import { Link } from "gatsby"
+import { jsx, Text, Button, Container, Heading, Grid } from "theme-ui"
+import { useRef } from "react"
+// import { Link } from "gatsby"
 // import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/Layout"
 import Seo from "../components/Seo"
+import Projects from "./projects"
+import AboutPage from "./about"
+import ContactPage from "./contact"
 
-import * as styles from "../styles/index.module.css"
+const IndexPage = () => {
+  const homeRef = useRef(null)
+  const aboutRef = useRef(null)
+  const projectsRef = useRef(null)
+  const contactsRef = useRef(null)
 
-const IndexPage = () => (
-  <Layout>
-    <div className={styles.container}>
+  const scrollFuncs = {
+    scrollToHome: () => homeRef.current.scrollIntoView(),
+    scrollToAbout: () => aboutRef.current.scrollIntoView(),
+    scrollToProjects: () => projectsRef.current.scrollIntoView(),
+    scrollToContacts: () => contactsRef.current.scrollIntoView(),
+  }
+
+  return (
+    <Layout scrollFuncs={scrollFuncs}>
       <Seo title="Home" />
-      <h2 sx={{ variant: "styles.logo" }}>Software Developer</h2>
-      <h3 sx={{ variant: "styles.h3" }}>Portfolio & blog site</h3>
-      {/* <StaticImage
-      src="../images/gatsby-astronaut.png"
-      width={300}
-      quality={95}
-      formats={["AUTO", "WEBP", "AVIF"]}
-      alt="A Gatsby astronaut"
-      style={{ marginBottom: `1.45rem` }}
-    /> */}
-      <p sx={{ variant: "styles.p" }}>
-        <button className={styles.projectButton} sx={{ variant: "styles.button" }}>
-          <Link to="/projects/">Projects</Link>
-        </button>
-      </p>
-    </div>
-  </Layout>
-)
+      {/* Home */}
+      <Container
+        ref={homeRef}
+        as="section"
+        sx={{
+          textAlign: "left",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <Grid gap={3}>
+          <Heading variant="logo" as="h1">
+            Aron Davidson
+          </Heading>
+          <Heading variant="subHeading" as="h2">
+            Software Developer
+          </Heading>
+          <Text variant="p" sx={{ opacity: 0.8 }} mb={40}>
+            Welcome to my website, have a look at some
+            <br /> of my projects or get in touch.
+          </Text>
+          <Button variant="outline" onClick={scrollFuncs.scrollToProjects}>
+            Projects
+          </Button>
+        </Grid>
+      </Container>
+      {/* End Home */}
+      <AboutPage ref={aboutRef} />
+      <Projects ref={projectsRef} />
+      <ContactPage ref={contactsRef} />
+    </Layout>
+  )
+}
 
 export default IndexPage

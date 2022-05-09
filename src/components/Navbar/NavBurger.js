@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
-import { Fragment, useState } from "react"
+import { Box, Flex, jsx } from "theme-ui"
+import { useState } from "react"
 import NavMenu from "./NavMenu"
 import styled from "@emotion/styled"
 
@@ -18,7 +18,7 @@ const StyledBurger = styled.div`
     height: 0.25rem;
     border-radius: 10px;
     transform-origin: 1px;
-    transition: all 0.2s linear;
+    transition: all 0.3s linear;
     &:nth-child(1) {
       transform: ${({ open }) => (open ? "rotate(45deg)" : "rotate(0)")};
     }
@@ -30,25 +30,35 @@ const StyledBurger = styled.div`
       transform: ${({ open }) => (open ? "rotate(-45deg)" : "rotate(0)")};
     }
   }
+  /* @media screen and (max-width: 40em) {
+    display: none;
+  } */
+
 `
 
 const NavBurger = () => {
   const [open, setOpen] = useState(false)
   return (
-    <Fragment>
+    <Flex>
       <StyledBurger
         sx={{
-          "&:hover": { div: { bg: "primary" } },
+          display: ['flex', 'flex', 'none'],
+          "&:hover": {
+            cursor: "pointer",
+            div: {
+              bg: "primary"
+            }
+          },
         }}
         open={open}
         onClick={() => setOpen(!open)}
       >
-        <div sx={{ variant: "styles.altButton" }} />
-        <div sx={{ variant: "styles.altButton" }} />
-        <div sx={{ variant: "styles.altButton" }} />
+        <Box variant="styles.altButton" />
+        <Box variant="styles.altButton" />
+        <Box variant="styles.altButton" />
       </StyledBurger>
       <NavMenu open={open} />
-    </Fragment>
+    </Flex>
   )
 }
 

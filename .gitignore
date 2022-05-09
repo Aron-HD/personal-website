@@ -1,6 +1,7 @@
 # notes > contentful
 *-project.md
 notes.md
+*.code-workspace
 
 # contentful import / export config for updating content between space environments (e.g. staging > master)
 config-import.json

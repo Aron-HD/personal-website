@@ -1,0 +1,1828 @@
+{
+  "contentTypes": [
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "xm5d5wo5s4no"
+          }
+        },
+        "id": "blogPost",
+        "type": "ContentType",
+        "createdAt": "2021-04-22T13:15:44.099Z",
+        "updatedAt": "2021-10-10T21:52:58.263Z",
+        "environment": {
+          "sys": {
+            "id": "staging",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 23,
+        "publishedAt": "2021-10-10T21:52:58.263Z",
+        "firstPublishedAt": "2021-04-22T13:15:48.278Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "62xZW49BXvF2aBbHoLp0cj"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "62xZW49BXvF2aBbHoLp0cj"
+          }
+        },
+        "publishedCounter": 12,
+        "version": 24,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "62xZW49BXvF2aBbHoLp0cj"
+          }
+        }
+      },
+      "displayField": "title",
+      "name": "Blog Post",
+      "description": "",
+      "fields": [
+        {
+          "id": "title",
+          "name": "Title",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "slug",
+          "name": "Slug",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "gitHubLink",
+          "name": "GitHub Link",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "regexp": {
+                "pattern": "^(ftp|http|https):\\/\\/(\\w+:{0,1}\\w*@)?(\\S+)(:[0-9]+)?(\\/|\\/([\\w#!:.?+=&%@!\\-/]))?$",
+                "flags": null
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "heroImage",
+          "name": "Hero Image",
+          "type": "Link",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Asset"
+        },
+        {
+          "id": "description",
+          "name": "Description",
+          "type": "Text",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "size": {
+                "min": null,
+                "max": 110
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "body",
+          "name": "Body",
+          "type": "Text",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "author",
+          "name": "Author",
+          "type": "Link",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "linkContentType": [
+                "person"
+              ]
+            }
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Entry"
+        },
+        {
+          "id": "publishDate",
+          "name": "Publish Date",
+          "type": "Date",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "tags",
+          "name": "Tags",
+          "type": "Array",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "items": {
+            "type": "Symbol",
+            "validations": [
+              {
+                "in": [
+                  "javascript",
+                  "gatsby.js",
+                  "next.js",
+                  "python",
+                  "django",
+                  "flask",
+                  "html",
+                  "css",
+                  "bash",
+                  "powershell",
+                  "git",
+                  "pandas",
+                  "selenium",
+                  "api",
+                  "database",
+                  "react",
+                  "angular",
+                  "contentful",
+                  "cms",
+                  "jenkins",
+                  "postman",
+                  "graphql",
+                  "sql",
+                  "postgresql",
+                  "mongodb",
+                  "mongoose",
+                  "slack",
+                  "netlify",
+                  "github",
+                  "node",
+                  "jinja2",
+                  "github-actions",
+                  "ci-cd",
+                  "gatsby",
+                  "cli",
+                  "pytest",
+                  "logging",
+                  "yaml"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "xm5d5wo5s4no"
+          }
+        },
+        "id": "person",
+        "type": "ContentType",
+        "createdAt": "2021-04-22T13:15:44.124Z",
+        "updatedAt": "2022-03-27T12:52:21.160Z",
+        "environment": {
+          "sys": {
+            "id": "staging",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 9,
+        "publishedAt": "2022-03-27T12:52:21.160Z",
+        "firstPublishedAt": "2021-04-22T13:15:47.630Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "62xZW49BXvF2aBbHoLp0cj"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "62xZW49BXvF2aBbHoLp0cj"
+          }
+        },
+        "publishedCounter": 5,
+        "version": 10,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "62xZW49BXvF2aBbHoLp0cj"
+          }
+        }
+      },
+      "displayField": "name",
+      "name": "Person",
+      "description": "",
+      "fields": [
+        {
+          "id": "name",
+          "name": "Name",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "title",
+          "name": "Title",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "shortBio",
+          "name": "Short Bio",
+          "type": "Text",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "github",
+          "name": "Github",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "image",
+          "name": "Image",
+          "type": "Link",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Asset"
+        },
+        {
+          "id": "technicalSkills",
+          "name": "Technical Skills",
+          "type": "Array",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "items": {
+            "type": "Symbol",
+            "validations": [
+            ]
+          }
+        },
+        {
+          "id": "longBio",
+          "name": "Long Bio",
+          "type": "RichText",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "nodes": {
+              }
+            },
+            {
+              "enabledNodeTypes": [
+                "heading-1",
+                "heading-2",
+                "heading-3",
+                "heading-4",
+                "heading-5",
+                "heading-6",
+                "ordered-list",
+                "unordered-list",
+                "hr",
+                "blockquote",
+                "embedded-entry-block",
+                "embedded-asset-block",
+                "hyperlink",
+                "entry-hyperlink",
+                "asset-hyperlink",
+                "embedded-entry-inline"
+              ],
+              "message": "Only heading 1, heading 2, heading 3, heading 4, heading 5, heading 6, ordered list, unordered list, horizontal rule, quote, block entry, asset, link to Url, link to entry, link to asset, and inline entry nodes are allowed"
+            },
+            {
+              "enabledMarks": [
+                "bold",
+                "italic",
+                "underline",
+                "code"
+              ],
+              "message": "Only bold, italic, underline, and code marks are allowed"
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "email",
+          "name": "Email",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "company",
+          "name": "Company",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "phone",
+          "name": "Phone",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": true
+        },
+        {
+          "id": "facebook",
+          "name": "Facebook",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": true
+        },
+        {
+          "id": "twitter",
+          "name": "Twitter",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        }
+      ]
+    }
+  ],
+  "editorInterfaces": [
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "xm5d5wo5s4no",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 25,
+        "createdAt": "2021-04-22T13:15:48.452Z",
+        "createdBy": {
+          "sys": {
+            "id": "62xZW49BXvF2aBbHoLp0cj",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2021-10-10T21:52:58.760Z",
+        "updatedBy": {
+          "sys": {
+            "id": "62xZW49BXvF2aBbHoLp0cj",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "blogPost",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "staging",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "sidebar": [
+        {
+          "settings": {
+          },
+          "widgetId": "publication-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "settings": {
+          },
+          "widgetId": "content-preview-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "settings": {
+          },
+          "widgetId": "1VchawWvbIClHuMIyxwR5m",
+          "widgetNamespace": "app"
+        },
+        {
+          "settings": {
+          },
+          "widgetId": "incoming-links-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "settings": {
+          },
+          "widgetId": "translation-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "settings": {
+          },
+          "widgetId": "versions-widget",
+          "widgetNamespace": "sidebar-builtin"
+        }
+      ],
+      "controls": [
+        {
+          "fieldId": "title",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "slug",
+          "widgetId": "slugEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "gitHubLink",
+          "widgetId": "urlEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "heroImage",
+          "widgetId": "assetLinkEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "description",
+          "widgetId": "markdown",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "body",
+          "widgetId": "markdown",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "author",
+          "widgetId": "entryLinkEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "publishDate",
+          "settings": {
+            "ampm": "24",
+            "format": "timeZ"
+          },
+          "widgetId": "datePicker",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "tags",
+          "widgetId": "tagEditor",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "xm5d5wo5s4no",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 11,
+        "createdAt": "2021-04-22T13:15:47.917Z",
+        "createdBy": {
+          "sys": {
+            "id": "62xZW49BXvF2aBbHoLp0cj",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2022-03-27T12:52:21.782Z",
+        "updatedBy": {
+          "sys": {
+            "id": "62xZW49BXvF2aBbHoLp0cj",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "person",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "staging",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "sidebar": [
+        {
+          "widgetId": "publication-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "widgetId": "content-preview-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "widgetId": "1VchawWvbIClHuMIyxwR5m",
+          "widgetNamespace": "app"
+        },
+        {
+          "widgetId": "incoming-links-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "widgetId": "translation-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "widgetId": "versions-widget",
+          "widgetNamespace": "sidebar-builtin"
+        }
+      ],
+      "controls": [
+        {
+          "fieldId": "name",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "title",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "shortBio",
+          "widgetId": "markdown",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "github",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "image",
+          "widgetId": "assetLinkEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "technicalSkills",
+          "settings": {
+            "helpText": "Tag the technical skills this person has."
+          },
+          "widgetId": "tagEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "longBio",
+          "settings": {
+            "helpText": "A bit more info about this person."
+          },
+          "widgetId": "richTextEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "email",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "company",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "phone",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "facebook",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "twitter",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "xm5d5wo5s4no"
+          }
+        },
+        "id": "2W9BdjTujvHELfFEd43vQ2",
+        "type": "Entry",
+        "createdAt": "2021-09-16T22:21:17.918Z",
+        "updatedAt": "2022-03-27T23:14:02.420Z",
+        "environment": {
+          "sys": {
+            "id": "staging",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 25,
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "blogPost"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Personal website"
+        },
+        "slug": {
+          "en-US": "personal-website"
+        },
+        "gitHubLink": {
+          "en-US": "https://github.com/Aron-HD/personal-website"
+        },
+        "heroImage": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "5Ta7qVyXm9lWFRyogiFjl"
+            }
+          }
+        },
+        "description": {
+          "en-US": "My website deployed in a CI/CD pipeline using GitHub Actions and Netlify."
+        },
+        "body": {
+          "en-US": "## 0. Index\n\n1. [Overview](#1-overview)\n2. [Content delivery](#2-content-delivery)\n3. [Content management](#3-content-management)\n4. [Styling](#4-styling)\n5. [Testing](#5-testing)\n\n## 1. Overview\n\nI chose to use Gatsby to build my website with as it is cutting edge and very responsive.\n\nAfter laying out a basic build in local development, I commited changes to the GitHub repository and set up automatic deployment to Netlify when any updates are pushed to the remote main branch. However, this meant that every time I commited changes, the build would run automatically in Netlify.\n\nTo have more control over this, rather than committing changes directly to main I implemented focused features through the system of raising issues, working on them as branches, submitting a pull request and then merging them in a proper pipeline.\n\nI automated the GitHub projects Kanban board to track these changes and integrated it with my personal Slack channel so I could add and track issues dynamically.\n\n![github-kanban](//images.ctfassets.net/xm5d5wo5s4no/4LeRQSGqhIGWkEdXG3IsQw/ff1715895e4b8a60ca712aa73339df3d/github-kanban.jpg)\n\n*[The project board](https://github.com/Aron-HD/personal-website/projects/1) please do raise an issue to make any suggestions or improvements for my site!* \n\n![personal-website-slack](//images.contentful.com/xm5d5wo5s4no/4EcG3ox5D44w5QK6LDk0ps/b8e3338360a15c978c0af5f10f8bdd24/personal-website-slack.jpg)\n\n*Slack integration*\n\nI then added in a GitHub Actions workflow to automatically build and test any changes pushed to the dev branch or when a pull request was submitted to main branch before they are deployed.\n\n![personal-website-github-actions-workflow](//images.contentful.com/xm5d5wo5s4no/3NXpasebLJX9XWbsKEdoCo/6c64115ecb6e022beb29ed0d5a2d2ede/personal-website-github-actions-workflow.PNG)\n\n*GitHub Actions workflow file*\n\n##### Workflow\n\n- issue raised through slack / GitHub / git\n- issue assigned in projects kanban\n- issues grouped into milestone sprint with due date\n- branch off develop created to work on issue\n- local development pushed to remote develop branch\n- GitHub Actions CI/CD script runs\n- pull request submitted to merge with main\n- pull request reviewed\n- pull request accepted or rejected\n- GitHub Actions CI/CD script runs\n- if passed: branch is merged with main (production)\n- any successful changes are automatically deployed to netlify\n\n## 2. Content delivery\n\nI integrated Contentful CMS for easy managing of content and content models, so that I can update the articles on the page easily. I also created a separate environments in Contentful to test content changes in staging environment first before they are commited to master branch used for production build in deployment:\n\n- master - production environment\n- develop - staging environment\n\nThe staging environment API Keys were placed in an '.env.development' file and configured to run with gatsby develop. The master environment Keys were placed in an '.env.production' file for use during gatsby build / deployment.\n\nThese keys also had to be referenced as environment variables in GitHub in order to pull through into the build process in the GitHub actions workflow.\n\n## 3. Content management\n\nUsing the `contentful-cli` content management api to push updates from staging environment to master environment in Contentful.\n\n[Documentation](https://www.contentful.com/developers/docs/tutorials/cli/import-and-export/)\n\n##### Exporting\n\nFirst we export the changes we want to update from the staging environment into a json file:\n\n    contentful space export --space-id {space-id} --environment-id develop --  query-entries 'content_type={content-model}'\n\nIf both environments have the same Content-Type we can use `--content-only`.\n\n##### Importing\n\nThen we import the changes from that file to the master environment:\n\n    contentful space import --space-id {space-id} --environment-id qa --content-file {file}\n\nAlternatively, we can write a json config file to select the settings we want rather than using `--flags` in the command line:\n\n    contentful space export --config config-export.json\n    contentful space import --config config-import.json\n\n## 4. Styling\n\nFor basic layout of pages and global styles I chose css modules.\n\nFor components I chose the `styled-components` module for better functionality.\n\nFor anything colour related I provided a theme through theme-ui to create a theme switching button and consistent colour and formatting across the site.\n\n## 5. Testing\n\nI plan to integrate automated testing with Cypress in future and incorporate this as a job in the GitHub actions workflow.\n"
+        },
+        "author": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "15jwOBqpxqSAOy2eOO4S0m"
+            }
+          }
+        },
+        "publishDate": {
+          "en-US": "2021-09-16T00:00+02:00"
+        },
+        "tags": {
+          "en-US": [
+            "contentful",
+            "graphql",
+            "gatsby.js",
+            "react"
+          ]
+        }
+      }
+    }
+  ],
+  "assets": [
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "xm5d5wo5s4no"
+          }
+        },
+        "id": "7orLdboQQowIUs22KAW4U",
+        "type": "Asset",
+        "createdAt": "2021-04-22T13:15:58.372Z",
+        "updatedAt": "2021-04-22T13:15:58.372Z",
+        "environment": {
+          "sys": {
+            "id": "staging",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 1
+      },
+      "fields": {
+        "title": {
+          "en-US": "Sparkler"
+        },
+        "description": {
+          "en-US": "John with Sparkler"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/xm5d5wo5s4no/7orLdboQQowIUs22KAW4U/b653fc420291380ac721a63980ff0a1b/matt-palmer-254999.jpg",
+            "details": {
+              "size": 2293094,
+              "image": {
+                "width": 3000,
+                "height": 2000
+              }
+            },
+            "fileName": "matt-palmer-254999.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "xm5d5wo5s4no"
+          }
+        },
+        "id": "4shwYI3POEGkw0Eg6kcyaQ",
+        "type": "Asset",
+        "createdAt": "2021-04-22T13:15:58.641Z",
+        "updatedAt": "2021-04-22T13:15:58.641Z",
+        "environment": {
+          "sys": {
+            "id": "staging",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 1
+      },
+      "fields": {
+        "title": {
+          "en-US": "Man in the fields"
+        },
+        "description": {
+          "en-US": "Tattooed man walking in a field"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/xm5d5wo5s4no/4shwYI3POEGkw0Eg6kcyaQ/ea1c1acf11180d3487d0c493e2ecd72b/felix-russell-saw-112140.jpg",
+            "details": {
+              "size": 4539181,
+              "image": {
+                "width": 2500,
+                "height": 1667
+              }
+            },
+            "fileName": "felix-russell-saw-112140.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "xm5d5wo5s4no"
+          }
+        },
+        "id": "4NzwDSDlGECGIiokKomsyI",
+        "type": "Asset",
+        "createdAt": "2021-04-22T13:15:58.875Z",
+        "updatedAt": "2021-04-22T13:15:58.875Z",
+        "environment": {
+          "sys": {
+            "id": "staging",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 1
+      },
+      "fields": {
+        "title": {
+          "en-US": "City"
+        },
+        "description": {
+          "en-US": "City pictured from the sky"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/xm5d5wo5s4no/4NzwDSDlGECGIiokKomsyI/eef2fb140ebad84614d6d70383e38efd/denys-nevozhai-100695.jpg",
+            "details": {
+              "size": 15736986,
+              "image": {
+                "width": 3992,
+                "height": 2992
+              }
+            },
+            "fileName": "denys-nevozhai-100695.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "xm5d5wo5s4no"
+          }
+        },
+        "id": "6Od9v3wzLOysiMum0Wkmme",
+        "type": "Asset",
+        "createdAt": "2021-04-22T13:15:59.158Z",
+        "updatedAt": "2021-04-22T13:15:59.158Z",
+        "environment": {
+          "sys": {
+            "id": "staging",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 1
+      },
+      "fields": {
+        "title": {
+          "en-US": "Woman with black hat"
+        },
+        "description": {
+          "en-US": "Woman wearing a black hat"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/xm5d5wo5s4no/6Od9v3wzLOysiMum0Wkmme/01e6a4386e690c791e8bf9a279d17dd3/cameron-kirby-88711.jpg",
+            "details": {
+              "size": 7316629,
+              "image": {
+                "width": 3000,
+                "height": 2000
+              }
+            },
+            "fileName": "cameron-kirby-88711.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "xm5d5wo5s4no"
+          }
+        },
+        "id": "1BSZiQjJzJkfHviJdusG78",
+        "type": "Asset",
+        "createdAt": "2021-09-16T22:14:58.043Z",
+        "updatedAt": "2021-09-21T18:36:03.291Z",
+        "environment": {
+          "sys": {
+            "id": "staging",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 2
+      },
+      "fields": {
+        "title": {
+          "en-US": "Storr - Isle of Skye"
+        },
+        "description": {
+          "en-US": "Scotland, September 2020"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/xm5d5wo5s4no/1BSZiQjJzJkfHviJdusG78/abf178aecf935917d2f39d53458c08b3/storr.png",
+            "details": {
+              "size": 4375688,
+              "image": {
+                "width": 5170,
+                "height": 3878
+              }
+            },
+            "fileName": "storr.png",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "xm5d5wo5s4no"
+          }
+        },
+        "id": "4EcG3ox5D44w5QK6LDk0ps",
+        "type": "Asset",
+        "createdAt": "2021-09-16T22:27:20.493Z",
+        "updatedAt": "2021-09-16T22:27:20.493Z",
+        "environment": {
+          "sys": {
+            "id": "staging",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 1
+      },
+      "fields": {
+        "title": {
+          "en-US": "personal-website-slack"
+        },
+        "description": {
+          "en-US": "Shows raising and closing issues via slack"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/xm5d5wo5s4no/4EcG3ox5D44w5QK6LDk0ps/b8e3338360a15c978c0af5f10f8bdd24/personal-website-slack.jpg",
+            "details": {
+              "size": 67645,
+              "image": {
+                "width": 847,
+                "height": 758
+              }
+            },
+            "fileName": "personal-website-slack.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "xm5d5wo5s4no"
+          }
+        },
+        "id": "4LeRQSGqhIGWkEdXG3IsQw",
+        "type": "Asset",
+        "createdAt": "2021-09-16T22:30:15.822Z",
+        "updatedAt": "2021-09-23T21:39:56.279Z",
+        "environment": {
+          "sys": {
+            "id": "staging",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 3
+      },
+      "fields": {
+        "title": {
+          "en-US": "github-kanban"
+        },
+        "description": {
+          "en-US": "Shows automated github kanban board to track issues and pull-requests"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/xm5d5wo5s4no/4LeRQSGqhIGWkEdXG3IsQw/a4ee0d60107cf474a66683ad73ca87ac/github-kanban.jpg",
+            "details": {
+              "size": 99093,
+              "image": {
+                "width": 1495,
+                "height": 778
+              }
+            },
+            "fileName": "github-kanban.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "xm5d5wo5s4no"
+          }
+        },
+        "id": "Ww9NvigOv0tNoDy4xJSz3",
+        "type": "Asset",
+        "createdAt": "2021-09-16T22:33:09.177Z",
+        "updatedAt": "2021-09-16T22:33:09.177Z",
+        "environment": {
+          "sys": {
+            "id": "staging",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 1
+      },
+      "fields": {
+        "title": {
+          "en-US": "projects-board-website"
+        },
+        "description": {
+          "en-US": "Showing barebones website projects page."
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/xm5d5wo5s4no/Ww9NvigOv0tNoDy4xJSz3/e6e1be5c538ad7df7285ea1c24e38dc1/projects-board-website.jpg",
+            "details": {
+              "size": 172411,
+              "image": {
+                "width": 1905,
+                "height": 976
+              }
+            },
+            "fileName": "projects-board-website.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "xm5d5wo5s4no"
+          }
+        },
+        "id": "51jrWnHb5VErSDu4Dd1wri",
+        "type": "Asset",
+        "createdAt": "2021-09-21T19:31:09.994Z",
+        "updatedAt": "2021-09-21T19:31:09.994Z",
+        "environment": {
+          "sys": {
+            "id": "staging",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 1
+      },
+      "fields": {
+        "title": {
+          "en-US": "Aron Hayes Davidson"
+        },
+        "description": {
+          "en-US": "My headshot in greyscale."
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/xm5d5wo5s4no/51jrWnHb5VErSDu4Dd1wri/98df87edd258faca91f3945e1dbed82d/60329603.png",
+            "details": {
+              "size": 93986,
+              "image": {
+                "width": 400,
+                "height": 400
+              }
+            },
+            "fileName": "60329603.png",
+            "contentType": "image/png"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "xm5d5wo5s4no"
+          }
+        },
+        "id": "7rViblGJ0392N5P1p6SdN8",
+        "type": "Asset",
+        "createdAt": "2021-09-23T21:02:47.985Z",
+        "updatedAt": "2021-09-23T21:02:47.985Z",
+        "environment": {
+          "sys": {
+            "id": "staging",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 1
+      },
+      "fields": {
+        "title": {
+          "en-US": "Hero personal website"
+        },
+        "description": {
+          "en-US": "Hero image for my personal-website project"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/xm5d5wo5s4no/7rViblGJ0392N5P1p6SdN8/4347ef00fcd7c92c732fe965e922f3c3/hero-personal-website.png",
+            "details": {
+              "size": 15171,
+              "image": {
+                "width": 734,
+                "height": 451
+              }
+            },
+            "fileName": "hero-personal-website.png",
+            "contentType": "image/png"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "xm5d5wo5s4no"
+          }
+        },
+        "id": "5Ta7qVyXm9lWFRyogiFjl",
+        "type": "Asset",
+        "createdAt": "2021-10-07T23:04:41.681Z",
+        "updatedAt": "2021-10-07T23:05:08.462Z",
+        "environment": {
+          "sys": {
+            "id": "staging",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 2
+      },
+      "fields": {
+        "title": {
+          "en-US": "Personal Website hero image"
+        },
+        "description": {
+          "en-US": ""
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/xm5d5wo5s4no/5Ta7qVyXm9lWFRyogiFjl/9ed1c50bb2b8369a4df0389de00fbb96/hero-personal-website.png",
+            "details": {
+              "size": 27287,
+              "image": {
+                "width": 1920,
+                "height": 977
+              }
+            },
+            "fileName": "hero-personal-website.png",
+            "contentType": "image/png"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "xm5d5wo5s4no"
+          }
+        },
+        "id": "7chhHFdCB32B04LB18BAMg",
+        "type": "Asset",
+        "createdAt": "2021-10-07T23:09:21.329Z",
+        "updatedAt": "2021-10-07T23:09:21.329Z",
+        "environment": {
+          "sys": {
+            "id": "staging",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 1
+      },
+      "fields": {
+        "title": {
+          "en-US": "Landing Pages hero image"
+        },
+        "description": {
+          "en-US": ""
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/xm5d5wo5s4no/7chhHFdCB32B04LB18BAMg/aca9b0432595dc7c7d572685940cc336/hero-landing-pages.png",
+            "details": {
+              "size": 1328518,
+              "image": {
+                "width": 1920,
+                "height": 1079
+              }
+            },
+            "fileName": "hero-landing-pages.png",
+            "contentType": "image/png"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "xm5d5wo5s4no"
+          }
+        },
+        "id": "1CnsVARKfrp22wnzXADKn0",
+        "type": "Asset",
+        "createdAt": "2021-10-07T23:10:48.119Z",
+        "updatedAt": "2021-10-07T23:10:48.119Z",
+        "environment": {
+          "sys": {
+            "id": "staging",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 1
+      },
+      "fields": {
+        "title": {
+          "en-US": "landing-pages-cmsbot"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/xm5d5wo5s4no/1CnsVARKfrp22wnzXADKn0/a5df0da920bde7d77479abea7a3a0d46/landing-pages-cmsbot.jpg",
+            "details": {
+              "size": 72986,
+              "image": {
+                "width": 946,
+                "height": 563
+              }
+            },
+            "fileName": "landing-pages-cmsbot.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "xm5d5wo5s4no"
+          }
+        },
+        "id": "3NXpasebLJX9XWbsKEdoCo",
+        "type": "Asset",
+        "createdAt": "2021-10-08T15:54:01.168Z",
+        "updatedAt": "2021-10-08T15:54:01.168Z",
+        "environment": {
+          "sys": {
+            "id": "staging",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 1
+      },
+      "fields": {
+        "title": {
+          "en-US": "personal-website-github-actions-workflow"
+        },
+        "description": {
+          "en-US": "The workflow file for GitHub Actions integration"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/xm5d5wo5s4no/3NXpasebLJX9XWbsKEdoCo/6c64115ecb6e022beb29ed0d5a2d2ede/personal-website-github-actions-workflow.PNG",
+            "details": {
+              "size": 56039,
+              "image": {
+                "width": 1451,
+                "height": 897
+              }
+            },
+            "fileName": "personal-website-github-actions-workflow.PNG",
+            "contentType": "image/png"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "xm5d5wo5s4no"
+          }
+        },
+        "id": "4qv0HYfH6Zmihk2RaU7cvg",
+        "type": "Asset",
+        "createdAt": "2021-10-10T20:58:30.159Z",
+        "updatedAt": "2021-10-10T22:13:48.747Z",
+        "environment": {
+          "sys": {
+            "id": "staging",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 2
+      },
+      "fields": {
+        "title": {
+          "en-US": "hero-automate-cli"
+        },
+        "description": {
+          "en-US": "Hero image for the automate command line app."
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/xm5d5wo5s4no/4qv0HYfH6Zmihk2RaU7cvg/2b1f496f79a21a72500e7269c0716c1c/hero-automate-cli.png",
+            "details": {
+              "size": 29755,
+              "image": {
+                "width": 562,
+                "height": 422
+              }
+            },
+            "fileName": "hero-automate-cli.png",
+            "contentType": "image/png"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "xm5d5wo5s4no"
+          }
+        },
+        "id": "6I2Xj8kSjcuh1weYRksHZr",
+        "type": "Asset",
+        "createdAt": "2021-10-10T21:34:44.080Z",
+        "updatedAt": "2021-10-10T21:34:44.080Z",
+        "environment": {
+          "sys": {
+            "id": "staging",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 1
+      },
+      "fields": {
+        "title": {
+          "en-US": "hero-cms-bot"
+        },
+        "description": {
+          "en-US": "Hero image of our CMS that the bot interacts with."
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/xm5d5wo5s4no/6I2Xj8kSjcuh1weYRksHZr/7e9416ce16282d5aea2ba448c38c5132/hero-cms-bot.png",
+            "details": {
+              "size": 44314,
+              "image": {
+                "width": 1580,
+                "height": 843
+              }
+            },
+            "fileName": "hero-cms-bot.png",
+            "contentType": "image/png"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "xm5d5wo5s4no"
+          }
+        },
+        "id": "6QpIYRnN7k8zhNTEiQLVFg",
+        "type": "Asset",
+        "createdAt": "2021-10-10T21:35:46.801Z",
+        "updatedAt": "2021-10-10T21:35:46.801Z",
+        "environment": {
+          "sys": {
+            "id": "staging",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 1
+      },
+      "fields": {
+        "title": {
+          "en-US": "cms-bot-gui"
+        },
+        "description": {
+          "en-US": "The simple interface built with PySimpleGUI with logging output behind."
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/xm5d5wo5s4no/6QpIYRnN7k8zhNTEiQLVFg/f5db83b64f73cc5e1409bbd362ff0d89/cms-bot-gui.png",
+            "details": {
+              "size": 17894,
+              "image": {
+                "width": 599,
+                "height": 463
+              }
+            },
+            "fileName": "cms-bot-gui.png",
+            "contentType": "image/png"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "xm5d5wo5s4no"
+          }
+        },
+        "id": "wBbocoB3A6zQnFOx3HdFd",
+        "type": "Asset",
+        "createdAt": "2021-10-10T21:39:52.695Z",
+        "updatedAt": "2021-10-10T21:39:52.695Z",
+        "environment": {
+          "sys": {
+            "id": "staging",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 1
+      },
+      "fields": {
+        "title": {
+          "en-US": "cms-bot-code"
+        },
+        "description": {
+          "en-US": "A code example from the CMSBot class."
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/xm5d5wo5s4no/wBbocoB3A6zQnFOx3HdFd/b1560a23e3b281669ff622875f0cfe9e/cms-bot-code.png",
+            "details": {
+              "size": 34492,
+              "image": {
+                "width": 743,
+                "height": 543
+              }
+            },
+            "fileName": "cms-bot-code.png",
+            "contentType": "image/png"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "xm5d5wo5s4no"
+          }
+        },
+        "id": "4nn56TIDG8UfsAmu4mHsBc",
+        "type": "Asset",
+        "createdAt": "2021-10-10T21:50:29.991Z",
+        "updatedAt": "2021-10-10T22:11:23.727Z",
+        "environment": {
+          "sys": {
+            "id": "staging",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 2
+      },
+      "fields": {
+        "title": {
+          "en-US": "hero-pypkg-template"
+        },
+        "description": {
+          "en-US": "Custom logging setup through YAML config file."
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/xm5d5wo5s4no/4nn56TIDG8UfsAmu4mHsBc/84bdd6e27369ac43fc7a5b67c263977a/hero-pypkg-template.png",
+            "details": {
+              "size": 55719,
+              "image": {
+                "width": 588,
+                "height": 441
+              }
+            },
+            "fileName": "hero-pypkg-template.png",
+            "contentType": "image/png"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "xm5d5wo5s4no"
+          }
+        },
+        "id": "1MTdG6fgxOqjGVhBxbrGCG",
+        "type": "Asset",
+        "createdAt": "2021-10-10T21:54:24.624Z",
+        "updatedAt": "2021-10-10T21:54:24.624Z",
+        "environment": {
+          "sys": {
+            "id": "staging",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 1
+      },
+      "fields": {
+        "title": {
+          "en-US": "pypkg-template-setup"
+        },
+        "description": {
+          "en-US": "View of package setup file."
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/xm5d5wo5s4no/1MTdG6fgxOqjGVhBxbrGCG/c3d5e40b495b84a5a0895d6667f0c1d1/pypkg-template-setup.png",
+            "details": {
+              "size": 22689,
+              "image": {
+                "width": 824,
+                "height": 454
+              }
+            },
+            "fileName": "pypkg-template-setup.png",
+            "contentType": "image/png"
+          }
+        }
+      }
+    }
+  ],
+  "locales": [
+    {
+      "name": "U.S. English",
+      "code": "en-US",
+      "fallbackCode": null,
+      "default": true,
+      "contentManagementApi": true,
+      "contentDeliveryApi": true,
+      "optional": false,
+      "sys": {
+        "type": "Locale",
+        "id": "6mIZ0MLmo5jqV2jFZUxiZN",
+        "version": 1,
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "xm5d5wo5s4no"
+          }
+        },
+        "environment": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Environment",
+            "id": "staging",
+            "uuid": "a81c827b-b64b-441c-b0e5-464e53194aca"
+          }
+        },
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "62xZW49BXvF2aBbHoLp0cj"
+          }
+        },
+        "createdAt": "2021-09-15T16:25:04Z",
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "62xZW49BXvF2aBbHoLp0cj"
+          }
+        },
+        "updatedAt": "2021-09-15T16:25:04Z"
+      }
+    }
+  ]
+}

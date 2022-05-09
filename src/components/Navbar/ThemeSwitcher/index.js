@@ -1,33 +1,32 @@
 /** @jsx jsx */
 import { jsx, useColorMode } from "theme-ui"
-import styled from "@emotion/styled"
-import SunIcon from "./Icons/Sun"
-import MoonIcon from "./Icons/Moon"
-
-const StyledThemeButton = styled.button`
-  display: block;
-  border: 0;
-  margin: 0;
-  height: 50px;
-  width: 50px;
-  cursor: "pointer";
-  background: none;
-  border-radius: 50%;
-  svg {
-    display: block;
-  }
-`
+import SunIcon from "./Sun"
+import MoonIcon from "./Moon"
 
 const ThemeSwitcher = () => {
   const [colorMode, setColorMode] = useColorMode()
   const nextColorMode = colorMode === "light" ? "dark" : "light"
   return (
-    <StyledThemeButton
+    <button
       sx={{
+        display: "block",
+        // position: "absolute",
+        left: "50%",
+        right: "50%",
+        border: 0,
+        m: 0,
+        borderRadius: "50%",
+        height: "50px",
+        width: "50px",
+        bg: "transparent",
         color: "secondary",
         "&:hover": {
-          transition: "all 0.3s ease",
+          transition: "all 0.3s cubic-bezier(0.65, 0.05, 0.36, 1)",
           color: "primary",
+          cursor: "pointer",
+        },
+        svg: {
+          display: "block",
         },
       }}
       onClick={() => setColorMode(nextColorMode)}
@@ -37,7 +36,7 @@ const ThemeSwitcher = () => {
       ) : (
         <MoonIcon />
       )}
-    </StyledThemeButton>
+    </button>
   )
 }
 

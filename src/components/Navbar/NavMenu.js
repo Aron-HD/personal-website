@@ -2,9 +2,11 @@
 import { jsx } from "theme-ui"
 import styled from "@emotion/styled"
 import { Link } from "gatsby"
+import ThemeSwitcher from "./ThemeSwitcher"
 // import Social from "../Social"
 
-const StyledMenu = styled.div`
+const StyledMenu = styled.aside`
+  display: block;
   position: relative;
   z-index: 1;
   .menu {
@@ -42,7 +44,7 @@ const StyledMenu = styled.div`
     }
   }
 
-  @media (max-width: 600px) {
+  @media screen and (max-width: 40em) {
     all: revert;
     .menu {
       display: grid;
@@ -66,7 +68,8 @@ const NavMenu = ({ open }) => {
   return (
     <StyledMenu>
       {open && (
-        <div sx={{ bg: "accent" }} className="menu">
+        <div sx={{ bg: "muted" }} className="menu">
+          <ThemeSwitcher />
           <ul>
             <li sx={{ variant: "styles.a" }}>
               <Link to="/projects">

@@ -1,25 +1,25 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+import { Box, jsx, Text } from "theme-ui"
+import { Fragment } from "react"
 import styled from "@emotion/styled"
 
 import Github from "./Icons/Github"
 import Linkedin from "./Icons/Linkedin"
+import Twitter from "./Icons/Twitter"
 
 const StyledSocial = styled.ul`
-  padding-left: 0;
+  padding: 0;
+  margin: 0;
+  left: 10px;
+  top: 45%;
   list-style: none;
   background: 0 0;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.4s cubic-bezier(0.65, 0.05, 0.36, 1);
   li {
-    display: inline-block;
-    width: 48px;
-    height: 48px;
-    padding-left: 5px;
-    padding-right: 5px;
     -webkit-animation: fade-in-down 0.9s;
     animation: fade-in-down 0.9s;
-    -webkit-animation-delay: 0.2s;
-    animation-delay: 0.2s;
+    -webkit-animation-delay: 0.3s;
+    animation-delay: 0.3s;
     /* a:hover {
     } */
   }
@@ -52,14 +52,43 @@ const StyledSocial = styled.ul`
 
 const Social = () => {
   return (
-    <StyledSocial>
-      <li sx={{ variant: "styles.socialIcon" }}>
-        <Github />
-      </li>
-      <li sx={{ variant: "styles.socialIcon" }}>
-        <Linkedin />
-      </li>
-    </StyledSocial>
+    <Fragment>
+      <StyledSocial
+        sx={{
+          position: [null, null, "none", "fixed"],
+
+          display: "flex",
+          flexDirection: [null, null, "row", "column"],
+          justifyContent: "center",
+          gap: "25px",
+          px: "10px",
+        }}
+      >
+        <Text as="li" variant="styles.socialIcon">
+          <Github handle="aron-hd" />
+        </Text>
+        <Text as="li" variant="styles.socialIcon">
+          <Linkedin handle="aron-hd" />
+        </Text>
+        <Text as="li" variant="styles.socialIcon">
+          <Twitter handle="_aronhd" />
+        </Text>
+        <Box
+          sx={{
+            display: ["none", "none", "none", "flex"],
+            position: "fixed",
+            bottom: 0,
+            left: "29px",
+            top: "61%",
+            height: "900vh",
+            borderLeft: "1px solid",
+            borderColor: "secondary",
+            opacity: 0.2,
+            boxShadow: "1 #000",
+          }}
+        />
+      </StyledSocial>
+    </Fragment>
   )
 }
 

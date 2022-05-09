@@ -3,7 +3,7 @@ import { jsx } from "theme-ui"
 import { graphql, Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
-import Layout from "../components/Layout"
+import ProjectLayout from "../components/ProjectLayout"
 import Seo from "../components/Seo"
 
 import * as styles from "../styles/project.module.css"
@@ -43,14 +43,10 @@ const Project = props => {
   const tags = props.data.contentfulBlogPost.tags
 
   return (
-    <Layout>
+    <ProjectLayout>
       <Seo title={props.data.contentfulBlogPost.title} />
-      <Link
-        sx={{ variant: "styles.a" }}
-        className={styles.returnLink}
-        to="/projects/"
-      >
-        {`<`} Projects
+      <Link className={styles.returnLink} to="/">
+        {`<`} Return
       </Link>
       <article className={styles.content}>
         <h1 sx={{ variant: "styles.h1" }}>
@@ -99,7 +95,7 @@ const Project = props => {
           }}
         />
       </article>
-    </Layout>
+    </ProjectLayout>
   )
 }
 

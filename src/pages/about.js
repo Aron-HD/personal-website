@@ -1,76 +1,86 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+import { Box, Container, Flex, jsx } from "theme-ui"
 import { graphql, useStaticQuery } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
-import Layout from "../components/Layout"
 import Seo from "../components/Seo"
 
-import "../styles/global.css"
 import * as styles from "../styles/about.module.css"
+import { Fragment, forwardRef } from "react"
+import SectionTitle from "../components/SectionTitle"
 
-const AboutPage = () => {
-    const data = useStaticQuery(
-        graphql`
-            query {
-                contentfulPerson(name: {eq: "Aron Hayes Davidson"}) {
-                    github
-                    email
-                    company
-                    title
-                    image {
-                        gatsbyImageData(
-                            placeholder: BLURRED
-                            layout: CONSTRAINED
-                            formats: [ AUTO, WEBP, PNG ]
-                            width: 300
-                            aspectRatio: 1.2
-                            height: 300
-                        )
-                    }
-                    shortBio {
-                        childMarkdownRemark {
-                            html
-                        }
-                    }
-                    technicalSkills
-                }
+const AboutPage = forwardRef((props, ref) => {
+  const data = useStaticQuery(
+    graphql`
+      query {
+        contentfulPerson(name: { eq: "Aron Hayes Davidson" }) {
+          github
+          email
+          company
+          title
+          image {
+            gatsbyImageData(
+              placeholder: BLURRED
+              layout: CONSTRAINED
+              formats: [AUTO, WEBP, PNG]
+              width: 300
+              aspectRatio: 1.2
+              height: 300
+            )
+          }
+          shortBio {
+            childMarkdownRemark {
+              html
             }
-        `
-    )
-    const skills = data.contentfulPerson.technicalSkills
-    return (
-        <Layout>
-            <Seo title="About" />
-            <section className={styles.container}>
-                <div className={styles.headshot}>
-                {data.contentfulPerson.image && (
-                    <GatsbyImage
-                    className={styles.headshot}
-                    alt={data.contentfulPerson.title}
-                    image={getImage(data.contentfulPerson.image)}
-                    />
-                )}
-                </div>
-                <div className={styles.outerBox}>
-                <h2 sx={{ variant: "styles.h2" }}>About</h2>
-                <div className={styles.box}>
-                    <div
-                        className={styles.bio}
-                        dangerouslySetInnerHTML={{
-                            __html: data.contentfulPerson.shortBio.childMarkdownRemark.html,
-                        }}
-                    />
-                    <ul>
-                        {skills && (skills.map((item, index) => (
-                            <li key={index}>{item}</li>)
+          }
+          technicalSkills
+        }
+      }
+    `
+  )
+  // const skills = data.contentfulPerson.technicalSkills
+  return (
+    <Fragment>
+      <Seo title="About" />
+      <Container
+        as="section"
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+        ref={ref}
+      >
+        <Flex
+          sx={{ flexDirection: ["column", "row", null], gap: [1, 4, null] }}
+        >
+          <Flex sx={{ flexDirection: "column", maxWidth: 320 }}>
+            <SectionTitle n="1">About</SectionTitle>
+            <Box
+              sx={{ opacity: 0.8 }}
+              dangerouslySetInnerHTML={{
+                __html: data.contentfulPerson.shortBio.childMarkdownRemark.html,
+              }}
+            />
+            {/* <ul>
+                            {skills && (skills.map((item, index) => (
+                                <li key={index}>{item}</li>)
                             ))}
-                    </ul>
-                </div>
-                </div>
-            </section>
-        </Layout>
-    )
-}
+                        </ul> */}
+          </Flex>
+          <Flex sx={{ justifyContent: "center", alignItems: "center" }}>
+            {data.contentfulPerson.image && (
+              <GatsbyImage
+                className={styles.headshot}
+                alt={data.contentfulPerson.title}
+                image={getImage(data.contentfulPerson.image)}
+              />
+            )}
+          </Flex>
+        </Flex>
+      </Container>
+    </Fragment>
+  )
+})
 
 export default AboutPage

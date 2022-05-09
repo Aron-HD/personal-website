@@ -11,14 +11,10 @@ body {
   text-align: center;
 }
 
-footer {
+/* footer {
   font-size: x-small;
   margin-top: 2rem;
-}
-
-main {
-  min-height: 60vh;
-}
+} */
 
 html,
 body {
