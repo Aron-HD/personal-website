@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { Box, Container, Flex, jsx } from "theme-ui"
+import { Container, Flex, jsx, Text } from "theme-ui"
 import { graphql, useStaticQuery } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
@@ -38,7 +38,7 @@ const AboutPage = forwardRef((props, ref) => {
       }
     `
   )
-  // const skills = data.contentfulPerson.technicalSkills
+
   return (
     <Fragment>
       <Seo title="About" />
@@ -57,7 +57,8 @@ const AboutPage = forwardRef((props, ref) => {
         >
           <Flex sx={{ flexDirection: "column", maxWidth: 320 }}>
             <SectionTitle n="1">About</SectionTitle>
-            <Box
+            <Text
+              as="p"
               sx={{ opacity: 0.8 }}
               dangerouslySetInnerHTML={{
                 __html: data.contentfulPerson.shortBio.childMarkdownRemark.html,

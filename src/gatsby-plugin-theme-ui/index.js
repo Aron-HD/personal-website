@@ -249,10 +249,20 @@ const theme = {
   text: {
     default: {
       color: "text",
-      fontFamily: "monospace",
       fontWeight: "body",
       lineHeight: "body",
       fontSize: 2,
+      a: {
+        color: "primary",
+        fontWeight: "bold",
+        borderBottom: "2px solid transparent",
+        boxShadow: "none",
+        "&:hover": {
+          opacity: 1,
+          boxShadow: theme => `0 2px 0 0 ${theme.colors.primary}`,
+          transition: "all 0.25s cubic-bezier(0.65, 0.05, 0.36, 1)",
+        },
+      },
     },
     caps: {
       textTransform: "uppercase",
