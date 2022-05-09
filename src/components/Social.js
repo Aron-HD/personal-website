@@ -14,12 +14,12 @@ const StyledSocial = styled.ul`
   top: 45%;
   list-style: none;
   background: 0 0;
-  transition: all 0.4s cubic-bezier(0.65, 0.05, 0.36, 1);
+  transition: all 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
   li {
     -webkit-animation: fade-in-down 0.9s;
     animation: fade-in-down 0.9s;
-    -webkit-animation-delay: 0.3s;
-    animation-delay: 0.3s;
+    -webkit-animation-delay: 0.1s;
+    animation-delay: 0.1s;
     /* a:hover {
     } */
   }
