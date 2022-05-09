@@ -1,7 +1,9 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
-import { graphql, Link } from "gatsby"
+import { jsx, Link, Box, Text, Heading } from "theme-ui"
+import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { BLOCKS, MARKS } from "@contentful/rich-text-types"
+import { renderRichText } from "gatsby-source-contentful/rich-text"
 
 import ProjectLayout from "../components/ProjectLayout"
 import Seo from "../components/Seo"
@@ -31,16 +33,92 @@ export const query = graphql`
           html
         }
       }
+      ...RichTextBlock
       gitHubLink
     }
   }
-`
 
+  fragment RichTextBlock on ContentfulBlogPost {
+    bodyRichText {
+      raw
+      references {
+        title
+        contentful_id
+        gatsbyImageData(
+          layout: FULL_WIDTH
+          quality: 80
+          formats: [WEBP, AUTO]
+          placeholder: BLURRED
+        )
+      }
+    }
+  }
+`
 const Project = props => {
   const author = props.data.contentfulBlogPost.author.github
   const pubDate = props.data.contentfulBlogPost.publishDate
   const gitHubLink = props.data.contentfulBlogPost.gitHubLink
   const tags = props.data.contentfulBlogPost.tags
+  const bodyRichText = props.data.contentfulBlogPost.bodyRichText
+  // map and assets by id
+  let richTextImages = {}
+  bodyRichText.references.map(
+    reference =>
+      (richTextImages[reference.contentful_id] = {
+        image: reference.gatsbyImageData,
+        alt: reference.title,
+      })
+  )
+
+  const options = {
+    renderNode: {
+      [BLOCKS.PARAGRAPH]: (node, children) => <Text as="p">{children}</Text>,
+      [BLOCKS.HEADING_1]: (node, children) => (
+        <Heading as="h1" variant="styles.h1">
+          {children}
+        </Heading>
+      ),
+      [BLOCKS.HEADING_2]: (node, children) => (
+        <Heading as="h2" variant="styles.h2">
+          {children}
+        </Heading>
+      ),
+      [BLOCKS.HEADING_3]: (node, children) => (
+        <Heading as="h3" variant="styles.h3">
+          {children}
+        </Heading>
+      ),
+      [BLOCKS.HEADING_4]: (node, children) => (
+        <Heading as="h4" variant="styles.h4">
+          {children}
+        </Heading>
+      ),
+      [BLOCKS.EMBEDDED_ASSET]: (node, children) => {
+        // retrieve asset by id to render
+        // const imageData = richTextImages[node.data.target.sys.id]
+        // const image = getImage(imageData.image)
+        // return <GatsbyImage image={getImage(image)} alt={imageData.alt} />
+        return JSON.stringify(node)
+      },
+    },
+    renderMark: {
+      [MARKS.BOLD]: text => (
+        <Text as="strong" sx={{ fontWeight: "heading" }}>
+          {text}
+        </Text>
+      ),
+      [MARKS.ITALIC]: text => (
+        <Text as="em" sx={{ fontStyle: "italic" }}>
+          {text}
+        </Text>
+      ),
+      [MARKS.CODE]: text => (
+        <Text as="code" variant="code">
+          {text}
+        </Text>
+      ),
+    },
+  }
 
   return (
     <ProjectLayout>
@@ -90,10 +168,12 @@ const Project = props => {
         </section>
         <section
           className={styles.body}
-          dangerouslySetInnerHTML={{
-            __html: props.data.contentfulBlogPost.body.childMarkdownRemark.html,
-          }}
-        />
+          // dangerouslySetInnerHTML={{
+          //   __html: props.data.contentfulBlogPost.body.childMarkdownRemark.html,
+          // }}
+        >
+          {bodyRichText && renderRichText(bodyRichText, options)}
+        </section>
       </article>
     </ProjectLayout>
   )

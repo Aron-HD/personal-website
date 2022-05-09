@@ -10,8 +10,8 @@
   /* text-align: center; */
 }
 .content a {
-  text-decoration: underline;
-  color: rgb(38, 103, 224);
+  /* text-decoration: underline; */
+  /* color: rgb(38, 103, 224); */
 }
 .content img {
   max-width: 100%;
