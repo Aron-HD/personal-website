@@ -3,9 +3,9 @@ import { Box, jsx, Text } from "theme-ui"
 import { Fragment } from "react"
 import styled from "@emotion/styled"
 
-import Github from "./Icons/Github"
-import Linkedin from "./Icons/Linkedin"
-import Twitter from "./Icons/Twitter"
+import Github from "./Github"
+import Linkedin from "./Linkedin"
+import Twitter from "./Twitter"
 
 const StyledSocial = styled.ul`
   padding: 0;

@@ -5,7 +5,7 @@ import styled from "@emotion/styled"
 
 import NavBurger from "./NavBurger"
 import ThemeSwitcher from "./ThemeSwitcher"
-import Logo from "../Icons/Logo"
+import Logo from "./Logo"
 import NavLinks from "./NavLinks"
 
 const StyledNav = styled.nav`
