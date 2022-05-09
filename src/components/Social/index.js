@@ -6,6 +6,7 @@ import styled from "@emotion/styled"
 import Github from "./Github"
 import Linkedin from "./Linkedin"
 import Twitter from "./Twitter"
+import Slack from "./Slack"
 
 const StyledSocial = styled.ul`
   padding: 0;
@@ -56,14 +57,17 @@ const Social = () => {
       <StyledSocial
         sx={{
           position: [null, null, "none", "fixed"],
-
           display: "flex",
           flexDirection: [null, null, "row", "column"],
           justifyContent: "center",
+          alignItems: "center",
           gap: "25px",
           px: "10px",
         }}
       >
+        <Text as="li" variant="styles.socialIcon">
+          <Slack handle="aron-hd" />
+        </Text>
         <Text as="li" variant="styles.socialIcon">
           <Github handle="aron-hd" />
         </Text>
@@ -74,15 +78,13 @@ const Social = () => {
           <Twitter handle="_aronhd" />
         </Text>
         <Box
+          as="span"
           sx={{
             display: ["none", "none", "none", "flex"],
-            position: "fixed",
-            bottom: 0,
-            left: "29px",
-            top: "61%",
+            justifyContent: "center",
             height: "900vh",
-            borderLeft: "1px solid",
-            borderColor: "secondary",
+            width: "1px",
+            bg: "secondary",
             opacity: 0.2,
             boxShadow: "1 #000",
           }}
