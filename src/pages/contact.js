@@ -10,7 +10,7 @@ import {
   Label,
   Textarea,
 } from "theme-ui"
-import { Fragment, forwardRef, useState } from "react"
+import { Fragment, forwardRef, useState, useRef } from "react"
 
 import Seo from "../components/Seo"
 import SectionTitle from "../components/SectionTitle"
@@ -27,6 +27,8 @@ const ContactPage = forwardRef((props, ref) => {
     subject: "",
     message: "",
   })
+
+  const contactForm = useRef()
 
   const handleChange = e => {
     setFormState({ ...formState, [e.target.name]: e.target.value })
@@ -49,6 +51,7 @@ const ContactPage = forwardRef((props, ref) => {
       }),
     })
       .then(() => alert("Success!"))
+      .then(() => contactForm.current.reset())
       .catch(error => alert(error))
   }
   const pageName = "Contact"
@@ -83,6 +86,8 @@ const ContactPage = forwardRef((props, ref) => {
             }}
           >
             <Grid
+              sx={{ width: "50%" }}
+              ref={contactForm}
               as="form"
               name="Contact Form"
               data-netlify="true"
@@ -93,12 +98,17 @@ const ContactPage = forwardRef((props, ref) => {
             >
               <Input type="hidden" name="form-name" value="Contact Form" />
               <FieldSet>
-                <Label htmlFor="name">Username</Label>
-                <Input name="name" id="name" onChange={handleChange} />
+                <Label htmlFor="name">Name</Label>
+                <Input name="name" id="name" onChange={handleChange} required />
               </FieldSet>
               <FieldSet>
                 <Label htmlFor="subject">Subject</Label>
-                <Input name="subject" id="subject" onChange={handleChange} />
+                <Input
+                  name="subject"
+                  id="subject"
+                  onChange={handleChange}
+                  required
+                />
               </FieldSet>
               <FieldSet>
                 <Label htmlFor="message">Message</Label>
@@ -107,6 +117,7 @@ const ContactPage = forwardRef((props, ref) => {
                   id="message"
                   rows={6}
                   onChange={handleChange}
+                  required
                 />
               </FieldSet>
               <Button type="submit">Submit</Button>
