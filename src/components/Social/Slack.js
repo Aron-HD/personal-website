@@ -9,7 +9,9 @@ const Slack = ({ handle }) => {
       }}
       variant="secondary"
       href={`https://${handle}.slack.com`}
-      title="Twitter"
+      title="Slack"
+      rel="noopener noreferrer"
+      target="_blank"
     >
       <svg
         viewBox="0 0 512 512"

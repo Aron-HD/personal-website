@@ -12,7 +12,7 @@ const StyledSocial = styled.ul`
   padding: 0;
   margin: 0;
   left: 10px;
-  top: 45%;
+  top: 66%;
   list-style: none;
   background: 0 0;
   transition: all 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
@@ -85,7 +85,7 @@ const Social = () => {
             height: "900vh",
             width: "1px",
             bg: "secondary",
-            opacity: 0.2,
+            opacity: 0.7,
             boxShadow: "1 #000",
           }}
         />

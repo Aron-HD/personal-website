@@ -10,6 +10,8 @@ const Linkedin = ({ handle }) => {
       variant="secondary"
       href={`https://uk.linkedin.com/in/${handle}`}
       title="LinkedIn"
+      rel="noopener noreferrer"
+      target="_blank"
     >
       <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <title>LinkedIn</title>
