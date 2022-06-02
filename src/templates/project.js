@@ -44,6 +44,7 @@ export const query = graphql`
       references {
         title
         contentful_id
+        __typename
         gatsbyImageData(
           layout: FULL_WIDTH
           quality: 80
@@ -60,9 +61,11 @@ const Project = props => {
   const gitHubLink = props.data.contentfulBlogPost.gitHubLink
   const tags = props.data.contentfulBlogPost.tags
   const bodyRichText = props.data.contentfulBlogPost.bodyRichText
-  // map and assets by id
+  const richText = { ...bodyRichText }
+
+  // create a map of assets by id
   let richTextImages = {}
-  bodyRichText.references.map(
+  richText.references.map(
     reference =>
       (richTextImages[reference.contentful_id] = {
         image: reference.gatsbyImageData,
@@ -72,14 +75,18 @@ const Project = props => {
 
   const options = {
     renderNode: {
-      [BLOCKS.PARAGRAPH]: (node, children) => <Text as="p">{children}</Text>,
+      [BLOCKS.PARAGRAPH]: (node, children) => (
+        <Text as="p" py="5px">
+          {children}
+        </Text>
+      ),
       [BLOCKS.HEADING_1]: (node, children) => (
         <Heading as="h1" variant="styles.h1">
           {children}
         </Heading>
       ),
       [BLOCKS.HEADING_2]: (node, children) => (
-        <Heading as="h2" variant="styles.h2">
+        <Heading as="h2" variant="styles.h2" pt={3}>
           {children}
         </Heading>
       ),
@@ -93,12 +100,12 @@ const Project = props => {
           {children}
         </Heading>
       ),
+      [BLOCKS.PRE]: (node, children) => <pre>{children}</pre>,
       [BLOCKS.EMBEDDED_ASSET]: (node, children) => {
-        // retrieve asset by id to render
-        // const imageData = richTextImages[node.data.target.sys.id]
-        // const image = getImage(imageData.image)
-        // return <GatsbyImage image={getImage(image)} alt={imageData.alt} />
-        return JSON.stringify(node)
+        // retrieve asset by id from map
+        const imageData = richTextImages[node.data.target.sys.id]
+        const image = getImage(imageData.image)
+        return <GatsbyImage image={getImage(image)} alt={imageData.alt} />
       },
     },
     renderMark: {
