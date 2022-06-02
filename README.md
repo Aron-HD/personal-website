@@ -34,3 +34,4 @@ the process in my [project blog](https://aronhd.com/projects/personal-website).
 
 - v1.1
 - v1.2
+- v2.0
