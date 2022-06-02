@@ -44,6 +44,7 @@ module.exports = {
         spaceId: process.env.CONTENTFUL_SPACE_ID,
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
         environment: process.env.CONTENTFUL_ENVIRONMENT,
+        host: process.env.CONTENTFUL_HOST || "cdn.contentful.com",
       },
     },
     `gatsby-plugin-theme-ui`,

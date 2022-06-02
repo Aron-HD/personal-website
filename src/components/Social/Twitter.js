@@ -10,6 +10,8 @@ const Twitter = ({ handle }) => {
       variant="secondary"
       href={`https://twitter.com/${handle}`}
       title="Twitter"
+      rel="noopener noreferrer"
+      target="_blank"
     >
       <svg
         role="img"

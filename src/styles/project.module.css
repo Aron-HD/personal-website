@@ -10,8 +10,8 @@
   /* text-align: center; */
 }
 .content a {
-  text-decoration: underline;
-  color: rgb(38, 103, 224);
+  /* text-decoration: underline; */
+  /* color: rgb(38, 103, 224); */
 }
 .content img {
   max-width: 100%;
@@ -74,8 +74,7 @@ code::-webkit-scrollbar-thumb {
     width: 100vw;
     margin: 0;
   }
-  .content section,
-  h1 {
+  article.content > section, article.content > h1 {
     padding: 10px;
   }
   .content .featured {

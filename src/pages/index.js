@@ -28,6 +28,7 @@ const IndexPage = () => {
       <Seo title="Home" />
       {/* Home */}
       <Container
+        id="home"
         ref={homeRef}
         as="section"
         sx={{
@@ -44,7 +45,7 @@ const IndexPage = () => {
           <Heading variant="subHeading" as="h2">
             Software Developer
           </Heading>
-          <Text variant="p" sx={{ opacity: 0.8 }} mb={40}>
+          <Text as="p" sx={{ opacity: 0.8 }} mb={40}>
             Welcome to my website, have a look at some
             <br /> of my projects or get in touch.
           </Text>

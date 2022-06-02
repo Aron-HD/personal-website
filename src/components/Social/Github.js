@@ -10,6 +10,8 @@ const Github = ({ handle }) => {
         display: "flex",
       }}
       variant="secondary"
+      rel="noopener noreferrer"
+      target="_blank"
     >
       <svg
         role="img"

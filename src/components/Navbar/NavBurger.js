@@ -19,21 +19,20 @@ const StyledBurger = styled.div`
     border-radius: 10px;
     transform-origin: 1px;
     transition: all 0.3s linear;
-    &:nth-child(1) {
+    &:nth-type-of(1) {
       transform: ${({ open }) => (open ? "rotate(45deg)" : "rotate(0)")};
     }
-    &:nth-child(2) {
+    &:nth-type-of(2) {
       transform: ${({ open }) => (open ? "translateX(100%)" : "translateX(0)")};
       opacity: ${({ open }) => (open ? 0 : 1)};
     }
-    &:nth-child(3) {
+    &:nth-type-of(3) {
       transform: ${({ open }) => (open ? "rotate(-45deg)" : "rotate(0)")};
     }
   }
   /* @media screen and (max-width: 40em) {
     display: none;
   } */
-
 `
 
 const NavBurger = () => {
@@ -42,12 +41,12 @@ const NavBurger = () => {
     <Flex>
       <StyledBurger
         sx={{
-          display: ['flex', 'flex', 'none'],
+          display: ["flex", "flex", "none"],
           "&:hover": {
             cursor: "pointer",
             div: {
-              bg: "primary"
-            }
+              bg: "primary",
+            },
           },
         }}
         open={open}

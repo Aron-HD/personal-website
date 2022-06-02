@@ -3,23 +3,24 @@ import { Box, jsx, Text } from "theme-ui"
 import { Fragment } from "react"
 import styled from "@emotion/styled"
 
-import Github from "./Icons/Github"
-import Linkedin from "./Icons/Linkedin"
-import Twitter from "./Icons/Twitter"
+import Github from "./Github"
+import Linkedin from "./Linkedin"
+import Twitter from "./Twitter"
+import Slack from "./Slack"
 
 const StyledSocial = styled.ul`
   padding: 0;
   margin: 0;
   left: 10px;
-  top: 45%;
+  top: 66%;
   list-style: none;
   background: 0 0;
-  transition: all 0.4s cubic-bezier(0.65, 0.05, 0.36, 1);
+  transition: all 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
   li {
     -webkit-animation: fade-in-down 0.9s;
     animation: fade-in-down 0.9s;
-    -webkit-animation-delay: 0.3s;
-    animation-delay: 0.3s;
+    -webkit-animation-delay: 0.1s;
+    animation-delay: 0.1s;
     /* a:hover {
     } */
   }
@@ -56,14 +57,17 @@ const Social = () => {
       <StyledSocial
         sx={{
           position: [null, null, "none", "fixed"],
-
           display: "flex",
           flexDirection: [null, null, "row", "column"],
           justifyContent: "center",
+          alignItems: "center",
           gap: "25px",
           px: "10px",
         }}
       >
+        <Text as="li" variant="styles.socialIcon">
+          <Slack handle="aron-hd" />
+        </Text>
         <Text as="li" variant="styles.socialIcon">
           <Github handle="aron-hd" />
         </Text>
@@ -74,16 +78,14 @@ const Social = () => {
           <Twitter handle="_aronhd" />
         </Text>
         <Box
+          as="span"
           sx={{
             display: ["none", "none", "none", "flex"],
-            position: "fixed",
-            bottom: 0,
-            left: "29px",
-            top: "61%",
+            justifyContent: "center",
             height: "900vh",
-            borderLeft: "1px solid",
-            borderColor: "secondary",
-            opacity: 0.2,
+            width: "1px",
+            bg: "secondary",
+            opacity: 0.7,
             boxShadow: "1 #000",
           }}
         />

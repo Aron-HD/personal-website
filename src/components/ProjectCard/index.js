@@ -2,8 +2,8 @@
 import { jsx, Flex, Box, Heading, Text, Badge, Card } from "theme-ui"
 import { Link } from "gatsby"
 
-import Github from "../Icons/Github"
-import Folder from "../Icons/Folder"
+import Github from "../Social/Github"
+import Folder from "./Folder"
 
 const ProjectCard = ({ title, ghLink, content, tags, slug }) => {
   return (
