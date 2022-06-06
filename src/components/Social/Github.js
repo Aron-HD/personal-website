@@ -4,10 +4,11 @@ import { jsx, Link } from "theme-ui"
 const Github = ({ handle }) => {
   return (
     <Link
-      href={`https://github.com/${handle}`}
+      href={`${handle}`}
       title="Github"
       sx={{
         display: "flex",
+        zIndex: "10",
       }}
       variant="secondary"
       rel="noopener noreferrer"

@@ -39,7 +39,13 @@ const ProjectCard = ({ title, ghLink, content, tags, slug }) => {
             <Box sx={{ height: "25px", width: "25px", color: "primary" }}>
               <Folder />
             </Box>
-            <Box sx={{ height: "25px", width: "25px", color: "accent" }}>
+            <Box
+              sx={{
+                height: "25px",
+                width: "25px",
+                color: "accent",
+              }}
+            >
               <Github handle={ghLink} />
             </Box>
           </Flex>
