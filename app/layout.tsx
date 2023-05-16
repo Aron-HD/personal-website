@@ -1,42 +1,23 @@
-"use client";
-
-import { ReactNode, useRef } from 'react'
-import Footer from './footer'
-import Header from './header'
+import { Metadata } from "next"
+import { ReactNode } from 'react'
 import './globals.css'
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Aron Davidson',
-  description: 'My personal website.',
+  description: 'My personal portfolio website.',
+  colorScheme: 'dark light',
+  viewport: 'width=device-width, initial-scale=1.0',
 }
 
-export default function RootLayout({
+
+export default ({
   children,
 }: {
   children: ReactNode
-}) {
-
-  const homeRef = useRef<HTMLElement>(null)
-  const aboutRef = useRef<HTMLElement>(null)
-  const projectsRef = useRef<HTMLElement>(null)
-  const contactRef = useRef<HTMLElement>(null)
-
-  const scrollFuncs: ScrollFuncs = {
-    scrollToHome: () => homeRef.current?.scrollIntoView(),
-    scrollToAbout: () => aboutRef.current?.scrollIntoView(),
-    scrollToProjects: () => projectsRef.current?.scrollIntoView(),
-    scrollToContact: () => contactRef.current?.scrollIntoView(),
-  }
-
-
-  return (
-    <html lang="en">
-      <body className="grid gap-[200px] place-items-center bg-background text-text">
-        {/* wrap in a context element that forwards refs. */}
-        <Header />
-        {children}
-        <Footer />
-      </body>
-    </html>
-  )
-}
+}) => (
+  <html lang="en">
+    <body className="grid gap-2 grid-cols-1 w-screen place-items-center bg-background text-text">
+      {children}
+    </body>
+  </html>
+)

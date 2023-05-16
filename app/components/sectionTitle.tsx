@@ -1,12 +1,11 @@
-import { ReactNode } from "react"
+import { PropsWithChildren } from "react"
 
-interface SectionTitleProps {
+interface SectionTitleProps extends PropsWithChildren {
   n: number
-  children: ReactNode
 }
 
 export default ({ n, children }: SectionTitleProps) => (
-  <h2 className="text-text font-heading font-black">
+  <h2 className="text-3xl text-text font-heading font-bold">
     <span className="static font-monospace text-primary opacity-90 mr-1">
       0{n}.
     </span>
