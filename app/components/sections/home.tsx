@@ -1,7 +1,7 @@
 import { PropsWithoutRef, forwardRef } from "react";
 import OutlineButton from "../buttons/outline";
 
-export default forwardRef<HTMLElement, ScrollFuncsProps>(({ scrollFuncs }, forwardedRef) => {
+const Home = forwardRef<HTMLElement, ScrollFuncsProps>(({ scrollFuncs }, forwardedRef) => {
 
     return (
         <section ref={forwardedRef} className="flex w-full h-3/4 center text-left" title="Home" >
@@ -17,3 +17,7 @@ export default forwardRef<HTMLElement, ScrollFuncsProps>(({ scrollFuncs }, forwa
         </section>
     );
 })
+
+Home.displayName = "Home";
+
+export default Home;

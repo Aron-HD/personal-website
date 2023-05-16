@@ -1,6 +1,6 @@
 "use client";
 
-export default ({ scrollFuncs }: Partial<ScrollFuncsProps>) => {
+const NavLinks = ({ scrollFuncs }: Partial<ScrollFuncsProps>) => {
 
   const { scrollToAbout, scrollToProjects, scrollToContact } =
     scrollFuncs != undefined
@@ -36,3 +36,4 @@ export default ({ scrollFuncs }: Partial<ScrollFuncsProps>) => {
   )
 }
 
+export default NavLinks;

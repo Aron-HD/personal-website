@@ -1,7 +1,7 @@
 import { PropsWithRef, forwardRef } from "react";
 import SectionTitle from "../../components/sectionTitle";
 
-export default forwardRef<PropsWithRef<HTMLElement>>((props, forwardedRef) => {
+const Projects = forwardRef<PropsWithRef<HTMLElement>>((props, forwardedRef) => {
     const pageName = "Projects";
 
     return (
@@ -10,3 +10,7 @@ export default forwardRef<PropsWithRef<HTMLElement>>((props, forwardedRef) => {
         </section>
     );
 })
+
+Projects.displayName = "Projects";
+
+export default Projects;

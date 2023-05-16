@@ -1,7 +1,7 @@
 import Image from 'next/image'
 // import Social from './components/social'
 
-export default () => (
+const Footer = () => (
     <footer className="grid w-full mb-10 text-xs p-[3px] gap-0 place-items-center">
         {/* <Social /> */}
         <span className="py-6">
@@ -28,3 +28,4 @@ export default () => (
     </footer>
 )
 
+export default Footer;

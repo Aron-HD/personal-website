@@ -12,7 +12,7 @@ type Props = {
     | undefined
 }
 
-export default forwardRef<HTMLElement, Props>((
+const About = forwardRef<HTMLElement, Props>((
     { me },
     forwardedRef
 ) => {
@@ -53,3 +53,6 @@ export default forwardRef<HTMLElement, Props>((
     );
 })
 
+About.displayName = "About";
+
+export default About;

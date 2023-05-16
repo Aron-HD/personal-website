@@ -1,5 +1,5 @@
 
-export default () => {
+const Sun = () => {
   return (
     <svg
       className="fill-secondary"
@@ -19,3 +19,5 @@ export default () => {
     </svg>
   )
 }
+
+export default Sun;

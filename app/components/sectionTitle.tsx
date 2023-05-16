@@ -4,7 +4,7 @@ interface SectionTitleProps extends PropsWithChildren {
   n: number
 }
 
-export default ({ n, children }: SectionTitleProps) => (
+const SectionTitle = ({ n, children }: SectionTitleProps) => (
   <h2 className="text-3xl text-text font-heading font-bold">
     <span className="static font-monospace text-primary opacity-90 mr-1">
       0{n}.
@@ -12,3 +12,5 @@ export default ({ n, children }: SectionTitleProps) => (
     {children}
   </h2>
 )
+
+export default SectionTitle;

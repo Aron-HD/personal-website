@@ -3,7 +3,7 @@
 import { ChangeEvent, FormEvent, PropsWithRef, forwardRef, useState } from "react";
 import SectionTitle from "../../components/sectionTitle";
 
-export default forwardRef<PropsWithRef<HTMLElement>>((props, forwardedRef) => {
+const Contact = forwardRef<PropsWithRef<HTMLElement>>((props, forwardedRef) => {
 
     const [formState, setFormState] = useState({
         name: "",
@@ -81,3 +81,7 @@ export default forwardRef<PropsWithRef<HTMLElement>>((props, forwardedRef) => {
         </>
     )
 })
+
+Contact.displayName = "Contact";
+
+export default Contact;

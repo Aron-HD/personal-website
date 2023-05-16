@@ -1,6 +1,6 @@
 import Link from "next/link"
 
-export default ({ handle }: { handle: string }) => {
+const LinkedIn = ({ handle }: { handle: string }) => {
     return (
         <Link
             className="flex secondary-link"
@@ -15,3 +15,5 @@ export default ({ handle }: { handle: string }) => {
 
     )
 }
+
+export default LinkedIn;

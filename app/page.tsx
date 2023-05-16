@@ -21,7 +21,7 @@ const me = {
 
 export type Me = typeof me
 
-export default () => {
+export default function App() {
 
   const homeRef = useRef<HTMLElement>(null)
   const aboutRef = useRef<HTMLElement>(null)

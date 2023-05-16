@@ -1,6 +1,5 @@
 import Link from "next/link"
-
-export default ({ handle }: { handle: string }) => (
+const Slack = ({ handle }: { handle: string }) => (
     <Link
         className="flex secondary-link"
         href={`https://${handle}.slack.com`}
@@ -25,3 +24,5 @@ export default ({ handle }: { handle: string }) => (
         </svg>
     </Link>
 )
+
+export default Slack;

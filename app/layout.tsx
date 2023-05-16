@@ -10,14 +10,16 @@ export const metadata: Metadata = {
 }
 
 
-export default ({
+export default function Layout({
   children,
 }: {
   children: ReactNode
-}) => (
-  <html lang="en">
-    <body className="grid gap-2 grid-cols-1 w-screen place-items-center bg-background text-text">
-      {children}
-    </body>
-  </html>
-)
+}) {
+  return (
+    <html lang="en">
+      <body className="grid gap-2 grid-cols-1 w-screen place-items-center bg-background text-text">
+        {children}
+      </body>
+    </html>
+  )
+}

@@ -1,6 +1,6 @@
-"use client";
+// "use client";
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 
 // import NavBurger from "./NavBurger"
 // import ThemeSwitcher from "./ThemeSwitcher"
@@ -13,23 +13,22 @@ const NavClosed = ({ scrollFuncs }: Partial<ScrollFuncsProps>) => {
   const [scrolledToTop, setScrolledToTop] = useState(true)
   const [scrollingDown, setScrollingDown] = useState(false)
 
-  // create a handleScroll function where we set the scroll state to true if the offset increases.
+  let previousScrollPosition = useRef(0);
 
-  let previousScrollPosition = 0;
+  useEffect(() => {
+    const handleScroll = () => {
+      const offset = window.scrollY
 
-  const handleScroll = () => {
-    const offset = window.scrollY
-    // convert the offset to a percentage
-    const p = Math.floor(offset / (document.body.scrollHeight - window.innerHeight) * 100);
+      if (offset > 20) setScrolledToTop(false)
+      else setScrolledToTop(true)
 
-    if (offset > 20) setScrolledToTop(false)
-    else setScrolledToTop(true)
+      if (offset > previousScrollPosition.current && offset > 10) setScrollingDown(true)
+      else setScrollingDown(false)
+      previousScrollPosition.current = offset;
+    }
+    window.addEventListener("scroll", handleScroll)
+  }, [])
 
-    if (offset > previousScrollPosition && offset > 100) setScrollingDown(true)
-    else setScrollingDown(false)
-    previousScrollPosition = offset;
-  }
-  useEffect(() => window.addEventListener("scroll", handleScroll), [previousScrollPosition])
 
   return (
     <nav className={`${scrollingDown ? "opacity-0" : "opacity-100"} ${scrolledToTop ? "static opacity-100" : "fixed"} 
@@ -54,4 +53,4 @@ const NavClosed = ({ scrollFuncs }: Partial<ScrollFuncsProps>) => {
   )
 }
 
-export default NavClosed
+export default NavClosed;

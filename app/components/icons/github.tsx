@@ -1,6 +1,6 @@
 import Link from "next/link"
 
-export default ({ handle }: { handle: string }) => {
+const Github = ({ handle }: { handle: string }) => {
     return (
         <Link
             href={`https://github.com/${handle}`}
@@ -20,3 +20,5 @@ export default ({ handle }: { handle: string }) => {
         </Link>
     )
 }
+
+export default Github;

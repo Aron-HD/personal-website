@@ -7,7 +7,7 @@ import Slack from "./icons/slack";
 
 type Props = { className: string }
 
-export default ({ className }: Props) => {
+const Social = ({ className }: Props) => {
     return (
         <ul className={className += " list-none bg-transparent"}>
             <li className="social-icon bezier-all animate-fade-in-down">
@@ -25,3 +25,5 @@ export default ({ className }: Props) => {
         </ul>
     );
 };
+
+export default Social;

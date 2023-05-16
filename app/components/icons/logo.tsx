@@ -1,4 +1,4 @@
-export default ({ scrollFunc }: Partial<ScrollFuncProps>) => (
+const Logo = ({ scrollFunc }: Partial<ScrollFuncProps>) => (
   <button
     type="button"
     title="Home"
@@ -21,3 +21,5 @@ export default ({ scrollFunc }: Partial<ScrollFuncProps>) => (
     </svg>
   </button>
 )
+
+export default Logo;
