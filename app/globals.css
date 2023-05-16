@@ -2,26 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.center {
+  @apply justify-center items-center;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.input {
+  @apply bg-transparent border border-gray-300 rounded-md shadow-sm w-full;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.secondary-link {
+  @apply text-inherit hover:text-primary cursor-pointer bezier-color;
 }
+
+.bezier-color {
+  @apply transition-[color_0.2s_cubic-bezier(0.65_0.05_0.36_1)];
+}
+
+.bezier-all {
+  @apply transition-[all_0.2s_cubic-bezier(0.65_0.05_0.36_1)];
+}
+
+.social-icon {
+  @apply w-6 h-6 m-0 p-0 flex justify-center items-center;
+}
+
+.social-icon>a {
+  @apply m-0 p-0;
+
+}
+
+.social-icon>a>svg {
+  @apply h-6 w-6 relative top-0 fill-secondary;
+}
+
+.social-icon>a>svg:hover {
+  @apply fill-primary -top-1 transition-all duration-300 ease-in-out;
+}
+
+
+/* .animation-delay-300 {
+  animation-delay: 0.3s;
+} */
+
+/* .animate-fade-in-down {
+  animation-name: fade-in-down;
+  animation-duration: 0.9s;
+} */
