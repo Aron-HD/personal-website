@@ -1,9 +1,9 @@
 "use client"
 
-import { ChangeEvent, FormEvent, PropsWithRef, forwardRef, useState } from "react";
+import { ChangeEvent, FormEvent, HTMLProps, PropsWithRef, forwardRef, useState } from "react";
 import SectionTitle from "../../components/sectionTitle";
 
-const Contact = forwardRef<PropsWithRef<HTMLElement>>((props, forwardedRef) => {
+const Contact = (props: HTMLProps<HTMLElement>) => {
 
     const [formState, setFormState] = useState({
         name: "",
@@ -40,7 +40,7 @@ const Contact = forwardRef<PropsWithRef<HTMLElement>>((props, forwardedRef) => {
     return (
         <>
             {/* <Seo title={pageName} /> */}
-            <section ref={forwardedRef} className="flex w-full h-full center" title={pageName} {...props}>
+            <section {...props} className="flex w-full h-full center" title={pageName}> 
                 <div
                     className="w-[60vw] flex flex-col gap-6 items-start justify-start">
                     <SectionTitle n={3}>{pageName}</SectionTitle>
@@ -80,7 +80,7 @@ const Contact = forwardRef<PropsWithRef<HTMLElement>>((props, forwardedRef) => {
             </section>
         </>
     )
-})
+}
 
 Contact.displayName = "Contact";
 

@@ -1,4 +1,8 @@
-const Logo = ({ scrollFunc }: Partial<ScrollFuncProps>) => (
+const Logo = () => {
+
+  const scrollFunc = () => document.getElementById("home")?.scrollIntoView({ behavior: "smooth" })
+  
+  return (
   <button
     type="button"
     title="Home"
@@ -21,5 +25,6 @@ const Logo = ({ scrollFunc }: Partial<ScrollFuncProps>) => (
     </svg>
   </button>
 )
+  }
 
 export default Logo;

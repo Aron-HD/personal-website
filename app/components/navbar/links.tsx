@@ -1,20 +1,18 @@
 "use client";
 
-const NavLinks = ({ scrollFuncs }: Partial<ScrollFuncsProps>) => {
+const NavLinks = () => {
 
-  const { scrollToAbout, scrollToProjects, scrollToContact } =
-    scrollFuncs != undefined
-      ? scrollFuncs
-      : {
-        scrollToAbout: () => console.log("scrollToAbout is undefined"),
-        scrollToProjects: () => console.log("scrollToProjects is undefined"),
-        scrollToContact: () => console.log("scrollToContacts is undefined"),
-      }
+  const scrollFuncs: ScrollFuncs = {
+    scrollToAbout: () => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' }),
+    scrollToProjects: () => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' }),
+    scrollToContact: () => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }),
+  }
+
 
   const navLinks = [
-    { name: "About", onClick: scrollToAbout },
-    { name: "Projects", onClick: scrollToProjects },
-    { name: "Contact", onClick: scrollToContact },
+    { name: "About", onClick: scrollFuncs.scrollToAbout },
+    { name: "Projects", onClick: scrollFuncs.scrollToProjects },
+    { name: "Contact", onClick: scrollFuncs.scrollToContact },
   ]
 
   return (

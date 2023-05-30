@@ -1,25 +1,15 @@
-import { forwardRef } from "react";
 // import { Image } from 'next/image';
 // import { Entry } from "contentful";
-// import ContentService, { PersonEntrySkeleton } from "../lib/contentful";
+import ContentService from "@/lib/contentful";
+import { HTMLProps } from "react";
 import SectionTitle from "../sectionTitle";
-import { Me } from "@/app/page";
 
-type Props = {
-    me:
-    // Entry<PersonEntrySkeleton> 
-    Me
-    | undefined
-}
-
-const About = forwardRef<HTMLElement, Props>((
-    { me },
-    forwardedRef
-) => {
+const About = async (props: HTMLProps<HTMLElement>) => {
     const pageName = "About";
+    const me = await new ContentService().getMe();
 
     return (
-        <section ref={forwardedRef} className="flex center w-full h-full" title={pageName}>
+        <section {...props} className="flex center w-full h-full" title={pageName}>
             {me &&
                 <div className="flex flex-col-reverse md:flex-row gap-10 md:gap-4 lg:gap-1">
                     <div className="flex-col max-w-[320px] flex-initial">
@@ -27,7 +17,7 @@ const About = forwardRef<HTMLElement, Props>((
                         <div
                             className="opacity-80"
                             dangerouslySetInnerHTML={{
-                                __html: me.fields.shortBio//.childMarkdownRemark.html,
+                                __html: me.fields.shortBio ?? ''//.childMarkdownRemark.html,
                             }}
                         />
                     </div>
@@ -51,7 +41,7 @@ const About = forwardRef<HTMLElement, Props>((
             }
         </section>
     );
-})
+}
 
 About.displayName = "About";
 
