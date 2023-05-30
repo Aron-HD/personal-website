@@ -1,6 +1,6 @@
 "use client"
 
-import { ChangeEvent, FormEvent, HTMLProps, PropsWithRef, forwardRef, useState } from "react";
+import { ChangeEvent, FormEvent, HTMLProps, useState } from "react";
 import SectionTitle from "../../components/sectionTitle";
 
 const Contact = (props: HTMLProps<HTMLElement>) => {
@@ -55,15 +55,15 @@ const Contact = (props: HTMLProps<HTMLElement>) => {
                             onSubmit={handleSubmit}
                         >
                             <input type="hidden" name="form-name" value="Contact Form" />
-                            <fieldset>
+                            <fieldset className="space-y-1">
                                 <label className="block" htmlFor="name">Username</label>
                                 <input name="name" id="name" className="input" onChange={handleChange} />
                             </fieldset>
-                            <fieldset>
+                            <fieldset className="space-y-1">
                                 <label className="block" htmlFor="subject">Subject</label>
                                 <input name="subject" id="subject" className="input" onChange={handleChange} />
                             </fieldset>
-                            <fieldset>
+                            <fieldset className="space-y-1">
                                 <label className="block" htmlFor="message">Message</label>
                                 <textarea
                                     name="message"
@@ -73,7 +73,7 @@ const Contact = (props: HTMLProps<HTMLElement>) => {
                                     onChange={handleChange}
                                 />
                             </fieldset>
-                            <button type="submit">Submit</button>
+                            <button type="submit" className="font-bold rounded-md w-fit hover:scale-[1.025] bezier-all hover:text-primary px-4 py-2 text-accent bg-muted">Submit</button>
                         </form>
                     </div>
                 </div>

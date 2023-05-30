@@ -1,4 +1,4 @@
-import { createClient, EntrySkeletonType, ContentfulClientApi, Entry } from 'contentful';
+import { createClient, EntrySkeletonType, ContentfulClientApi } from 'contentful';
 
 export default class ContentService {
 
