@@ -1,3 +1,4 @@
+import { PersonEntry } from '@/types';
 import { createClient, EntrySkeletonType, ContentfulClientApi } from 'contentful';
 
 export default class ContentService {
@@ -19,7 +20,7 @@ export default class ContentService {
   }
 
   async getMe() {
-    return await this._client.getEntry<PersonEntrySkeleton>("15jwOBqpxqSAOy2eOO4S0m");
+    return await this._client.getEntry<PersonEntry>("15jwOBqpxqSAOy2eOO4S0m");
   };
 
   async getEntriesByType<T extends EntrySkeletonType>(type: string) {

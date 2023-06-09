@@ -12,7 +12,7 @@ const About = async (props: HTMLProps<HTMLElement>) => {
         <section {...props} className="flex center w-full h-full" title={pageName}>
             {me &&
                 <div className="flex flex-col-reverse md:flex-row gap-10 md:gap-4 lg:gap-1">
-                    <div className="flex-col max-w-[320px] flex-initial">
+                    <div className="flex flex-col max-w-[320px] flex-initial gap-6">
                         <SectionTitle n={1}>{pageName}</SectionTitle>
                         <div
                             className="opacity-80"
@@ -25,7 +25,7 @@ const About = async (props: HTMLProps<HTMLElement>) => {
                         <p className="flex text-primary text-center align-middle center min-w-[200px] min-h-[200px] bg-accent/10">
                             {/* {me.fields.title.toString()} */}
                             image
-                            {/* <Image src="" alt="" srcset="" /> */}
+                            {/* <Image src={me.fields} alt="" srcset="" /> */}
                         </p>
                         {/* {me.fields.name.toString()} */}
                         {/* {data.contentfulPerson.image && (

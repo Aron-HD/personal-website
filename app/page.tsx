@@ -11,10 +11,11 @@ export default async function App() {
   return (
     <>
       <Header />
-      <main className="grid grid-rows-[100vh_100vh_100vh_100vh] w-full place-items-center gap-2">
+      <main className="flex py-[20vh] md:p-0 flex-col gap-[50vh] md:grid grid-rows-none md:grid-rows-[100vh_100vh_100vh_100vh] w-full place-items-center md:gap-2">
         <Home id="home" />
         {/* @ts-expect-error Server Component */}
         <About id="about" />
+        {/* @ts-expect-error Server Component */}
         <Projects id="projects" />
         <Contact id="contact" />
       </main>
