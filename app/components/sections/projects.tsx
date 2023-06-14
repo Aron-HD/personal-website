@@ -1,7 +1,7 @@
 import { HTMLProps } from "react";
 import SectionTitle from "../../components/sectionTitle";
 import ContentService from "@/lib/contentful";
-import { BlogPostEntry, BlogPostFields } from "@/types";
+import { BlogPostEntry, BlogPost } from "@/types";
 import Link from "next/link";
 import Github from "../icons/github";
 
@@ -17,10 +17,10 @@ const Tag = (props: HTMLProps<HTMLElement>) => {
 // fix the props on the project component
 
 
-const Project = ({ fields }: { fields: BlogPostFields }) => {
+const Project = ({ project }: { project: BlogPost }) => {
     return (
         <article className="bg-muted rounded-md min-h-[300px] max-h-[300px] min-w-[300px] max-w-[350px]">
-            <Link className="grid gap-2 p-6 h-full" href={"/projects/" + fields.slug}>
+            <Link className="grid gap-2 p-6 h-full" href={"/" + project.slug}>
                 <header className="space-y-2">
                     <div className="flex justify-between">
                         <div className="h-6 w-6 text-primary">
@@ -38,16 +38,19 @@ const Project = ({ fields }: { fields: BlogPostFields }) => {
                             </svg>
                         </div>
                         <div className="h-6 w-6 text-accent">
-                            <Github handle={fields.gitHubLink} />
+                            <Github handle={project.gitHubLink} />
                         </div>
                     </div>
-                    <h3 className="text-accent hover:text-primary text-[26px] font-extrabold bezier-color">{fields.title.toString()}</h3>
+                    <h3 className="text-accent hover:text-primary text-[26px] font-extrabold bezier-color">
+                        {project.title.toString()}
+                    </h3>
                 </header>
-                {fields.description && <p className="opacity-80">{fields.description}</p>}
+                {
+                    project.description && <p className="opacity-80">{project.description}</p>
+                }
                 <footer className="flex gap-[6px] h-full items-end">
                     {
-                        // @ts-ignore
-                        fields.tags?.map((tag: string) => <Tag>{tag}</Tag>)
+                        project.tags?.map((tag: string, i: number) => <Tag key={i}>{tag}</Tag>)
                     }
                 </footer>
             </Link>
@@ -60,17 +63,18 @@ const pageName = "Projects";
 
 const Projects = async (props: HTMLProps<HTMLElement>) => {
 
-    const projects = await new ContentService().getEntriesByType<BlogPostEntry>("blogPost");
+    const projects = await new ContentService().getBlogPosts();
 
     return (
         <section {...props} className="flex center w-full h-full" title={pageName} >
             <div className="max-w-[90%] flex flex-col center gap-6">
                 <div className="w-full">
-
                     <SectionTitle n={2}>{pageName}</SectionTitle>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 grid-flow-row gap-4">
-                    {projects.map((project) => <Project fields={project.fields as BlogPostFields} />)}
+                    {projects.map((project, index) => {
+                        return <Project key={index} project={project} />
+                    })}
                 </div>
             </div>
         </section>

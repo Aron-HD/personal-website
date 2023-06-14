@@ -1,10 +1,10 @@
+import { BLOCKS, MARKS, Document } from '@contentful/rich-text-types';
 import { BlogPostFields } from '@/types';
-import { Entry, EntryFieldTypes } from "contentful";
+import { Asset, Entry, EntryFieldTypes } from "contentful";
 
 interface ScrollFuncs {
     [key: string]: () => void | undefined;
 }
-
 
 type ScrollFuncsProps = { scrollFuncs: ScrollFuncs }
 type ScrollFuncProps = { scrollFunc: ScrollFuncs[keyof ScrollFuncs] }
@@ -16,9 +16,6 @@ interface PersonEntry extends EntrySkeletonType {
         title: EntryFieldTypes.Symbol
         github: EntryFieldTypes.Text
         shortBio: EntryFieldTypes.Text
-        // github: EntryFieldTypes.Array<
-        //   EntryFieldTypes.EntryLink<CategoryEntrySkeleton>
-        // >
         // location: EntryFieldTypes.Location
     }
 }
@@ -29,25 +26,47 @@ interface BlogPostEntry extends EntrySkeletonType {
         title: EntryFieldTypes.Symbol;
         slug: EntryFieldTypes.Symbol;
         gitHubLink: EntryFieldTypes.Text;
-        heroImage: EntryFieldTypes.Asset;
+        heroImage: Entry<Asset>;
         description: EntryFieldTypes.Text;
         body: EntryFieldTypes.Text;
         bodyRichText: EntryFieldTypes.Document;
-        author?: Entry<PersonFields>;
+        author?: Entry<PersonEntry>;
         publishDate: EntryFieldTypes.Date;
         tags?: EntryFieldTypes.Symbol[];
     }
 }
 
-interface BlogPostFields {
-  title: string;
-  slug: string;
-  gitHubLink: string;
-  heroImage: Entry<any>;
-  description: string;
-  body: string;
-  bodyRichText: Entry<any>;
-  author?: Entry<PersonFields>;
-  publishDate: string;
-  tags?: string[];
+interface Person {
+    name: string;
+    title: string;
+    github: string;
+    shortBio: string;
+    // location: string;
+}
+
+interface BlogPost {
+    title: string;
+    slug: string;
+    gitHubLink: string;
+    heroImage: Entry<Asset>;
+    description: string;
+    body: string;
+    bodyRichText: Document;
+    author?: Entry<PersonEntry>;
+    publishDate: string;
+    tags?: string[];
+}
+
+interface ContentfulImage {
+    title?: string,
+    description?: string,
+    file?: {
+        url: string
+        details: {
+            image: {
+                width: number
+                height: number
+            }
+        }
+    }
 }

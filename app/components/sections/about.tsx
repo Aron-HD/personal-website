@@ -8,6 +8,7 @@ const About = async (props: HTMLProps<HTMLElement>) => {
     const pageName = "About";
     const me = await new ContentService().getMe();
 
+
     return (
         <section {...props} className="flex center w-full h-full" title={pageName}>
             {me &&
@@ -17,7 +18,7 @@ const About = async (props: HTMLProps<HTMLElement>) => {
                         <div
                             className="opacity-80"
                             dangerouslySetInnerHTML={{
-                                __html: me.fields.shortBio ?? ''//.childMarkdownRemark.html,
+                                __html: me.shortBio ?? ''//.childMarkdownRemark.html,
                             }}
                         />
                     </div>

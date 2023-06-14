@@ -1,5 +1,5 @@
-import { PersonEntry } from '@/types';
-import { createClient, EntrySkeletonType, ContentfulClientApi } from 'contentful';
+import { PersonEntry, Person, BlogPostEntry, BlogPost } from '@/types';
+import { createClient, EntrySkeletonType, ContentfulClientApi, EntriesQueries } from 'contentful';
 
 export default class ContentService {
 
@@ -19,16 +19,29 @@ export default class ContentService {
     })
   }
 
-  async getMe() {
-    return await this._client.getEntry<PersonEntry>("15jwOBqpxqSAOy2eOO4S0m");
+  async getMe(): Promise<Person> {
+    return (await this._client.getEntry<PersonEntry>("15jwOBqpxqSAOy2eOO4S0m")).fields;
   };
 
-  async getEntriesByType<T extends EntrySkeletonType>(type: string) {
-    return (
-      await this._client.getEntries<T>({
-        content_type: type,
+  async getBlogPosts(): Promise<BlogPost[]> {
+    return await this._client
+      .getEntries<BlogPostEntry>({ content_type: 'blogPost' })
+      .then(({ items }) => items.map(({ fields }) => fields as BlogPost));
+  };
+
+  async getBlogPostSlugs() {
+    return await this._client
+      .getEntries<BlogPostEntry>({ content_type: 'blogPost', select: ['fields.slug'] })
+      .then(({ items }) => items.map(({ fields }) => fields.slug));
+  }
+
+  async getBlogPostBySlug(slug: string): Promise<BlogPost> {
+    return await this._client
+      .getEntries<BlogPostEntry>({
+        content_type: 'blogPost',
+        "fields.slug": slug
       })
-    ).items;
+      .then(({ items }) => items[0]?.fields as BlogPost);
   };
 }
 
