@@ -1,6 +1,6 @@
 import { BLOCKS, MARKS, Document } from '@contentful/rich-text-types';
 import { BlogPostFields } from '@/types';
-import { Asset, Entry, EntryFieldTypes } from "contentful";
+import { Asset, AssetFields, Entry, EntryField, EntryFieldTypes, Link } from "contentful";
 
 interface ScrollFuncs {
     [key: string]: () => void | undefined;
@@ -14,9 +14,12 @@ interface PersonEntry extends EntrySkeletonType {
     fields: {
         name: EntryFieldTypes.Symbol
         title: EntryFieldTypes.Symbol
-        github: EntryFieldTypes.Text
+        github: EntryFieldTypes.Symbol
         shortBio: EntryFieldTypes.Text
-        // location: EntryFieldTypes.Location
+        image: Entry<Asset>
+        email: EntryFieldTypes.Symbol
+        company: EntryFieldTypes.Symbol
+        twitter: EntryFieldTypes.Symbol
     }
 }
 
@@ -26,7 +29,7 @@ interface BlogPostEntry extends EntrySkeletonType {
         title: EntryFieldTypes.Symbol;
         slug: EntryFieldTypes.Symbol;
         gitHubLink: EntryFieldTypes.Text;
-        heroImage: Entry<Asset>;
+        heroImage: Asset;
         description: EntryFieldTypes.Text;
         body: EntryFieldTypes.Text;
         bodyRichText: EntryFieldTypes.Document;
@@ -41,14 +44,17 @@ interface Person {
     title: string;
     github: string;
     shortBio: string;
-    // location: string;
+    image: Asset;
+    email: string;
+    company: string;
+    twitter: string;
 }
 
 interface BlogPost {
     title: string;
     slug: string;
     gitHubLink: string;
-    heroImage: Entry<Asset>;
+    heroImage: Asset;
     description: string;
     body: string;
     bodyRichText: Document;
@@ -57,7 +63,8 @@ interface BlogPost {
     tags?: string[];
 }
 
-interface ContentfulImage {
+
+interface ContentfulImageFields {
     title?: string,
     description?: string,
     file?: {

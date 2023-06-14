@@ -1,10 +1,30 @@
 import { HTMLProps } from "react";
 import SectionTitle from "../../components/sectionTitle";
 import ContentService from "@/lib/contentful";
-import { BlogPostEntry, BlogPost } from "@/types";
+import { BlogPost } from "@/types";
 import Link from "next/link";
 import Github from "../icons/github";
 
+export default async function Projects(props: HTMLProps<HTMLElement>) {
+    const pageName = "Projects";
+
+    const projects = await new ContentService().getBlogPosts();
+
+    return (
+        <section {...props} className="flex center w-full h-full" title={pageName} >
+            <div className="max-w-[90%] flex flex-col center gap-6">
+                <div className="w-full">
+                    <SectionTitle n={2}>{pageName}</SectionTitle>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 grid-flow-row gap-4">
+                    {projects.map((project, index) => {
+                        return <Project key={index} project={project} />
+                    })}
+                </div>
+            </div>
+        </section>
+    );
+}
 
 const Tag = (props: HTMLProps<HTMLElement>) => {
     return (
@@ -13,9 +33,6 @@ const Tag = (props: HTMLProps<HTMLElement>) => {
         </span>
     );
 }
-
-// fix the props on the project component
-
 
 const Project = ({ project }: { project: BlogPost }) => {
     return (
@@ -56,31 +73,4 @@ const Project = ({ project }: { project: BlogPost }) => {
             </Link>
         </article>
     );
-
 }
-
-const pageName = "Projects";
-
-const Projects = async (props: HTMLProps<HTMLElement>) => {
-
-    const projects = await new ContentService().getBlogPosts();
-
-    return (
-        <section {...props} className="flex center w-full h-full" title={pageName} >
-            <div className="max-w-[90%] flex flex-col center gap-6">
-                <div className="w-full">
-                    <SectionTitle n={2}>{pageName}</SectionTitle>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 grid-flow-row gap-4">
-                    {projects.map((project, index) => {
-                        return <Project key={index} project={project} />
-                    })}
-                </div>
-            </div>
-        </section>
-    );
-}
-
-Projects.displayName = pageName;
-
-export default Projects;

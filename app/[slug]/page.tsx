@@ -1,10 +1,12 @@
+import { Options } from "@contentful/rich-text-react-renderer"
+import { BLOCKS, INLINES, MARKS, Hyperlink } from "@contentful/rich-text-types"
 import React from 'react'
-import Image from 'next/image'
 import ContentService from '@/lib/contentful'
-import { ContentfulImage, Person } from '@/types'
-// import { useRouter } from 'next/navigation'
-import { BLOCKS, MARKS, INLINES } from '@contentful/rich-text-types';
-import { Options, documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { Person } from '@/types'
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import PageNotFound from '../not-found'
+import ContentfulImage from '../components/contentfulImage';
+import Link from "next/link"
 
 export async function generateStaticParams() {
     return await new ContentService()
@@ -17,14 +19,15 @@ export async function generateStaticParams() {
 }
 
 export default async function ProjectPage({ params }: { params: { slug: string } }) {
+    // reset scroll position to top of page
     const slug = params?.slug as string;
     const project = await new ContentService().getBlogPostBySlug(slug);
 
     if (!project) {
-        return <div>404</div>
+        return PageNotFound();
     }
 
-    const { author: auth, gitHubLink, tags, publishDate, title, heroImage: hero, bodyRichText } = project
+    const { author: auth, gitHubLink, tags, publishDate, title, heroImage, bodyRichText } = project
     const author = auth?.fields as Person
 
     const pubDate = new Date(publishDate).toLocaleDateString('en-GB', {
@@ -33,12 +36,8 @@ export default async function ProjectPage({ params }: { params: { slug: string }
         day: 'numeric'
     })
 
-
-    const heroImage = hero.fields as ContentfulImage
-
-
     return (
-        <article className="max-w-[60%] grid gap-5">
+        <article className="px-8 md:px-0 md:max-w-[60%] grid gap-5">
             <h1 className='font-black text-3xl text-primary'>
                 {title}
             </h1>
@@ -64,12 +63,9 @@ export default async function ProjectPage({ params }: { params: { slug: string }
             </section>
             <section className="" title='hero' >
                 {heroImage && (
-                    <Image
+                    <ContentfulImage
                         className=""
-                        src={"https:" + heroImage.file?.url}
-                        width={heroImage.file?.details.image.width}
-                        height={heroImage.file?.details.image.height}
-                        alt={title}
+                        asset={heroImage}
                     />
                 )}
             </section>
@@ -81,14 +77,15 @@ export default async function ProjectPage({ params }: { params: { slug: string }
 }
 
 const richTextRenderOptions: Options = {
-    // write a rendernode for hyperlinks
-
     renderNode: {
-        [INLINES.HYPERLINK]: (node, children) => (
-            <a className='hover:text-primary cursor-pointer'>{children}</a>
-        ),
+        [INLINES.HYPERLINK]: (node, children) => {
+            const { data: { uri } } = node as Hyperlink;
+            return (
+                <Link href={uri} target="_blank" className='hover:text-accent font-bold text-primary cursor-pointer'>{children}</Link>
+            )
+        },
         [BLOCKS.PARAGRAPH]: (node, children) => (
-            <p className='py-[5px]'>
+            <p className='py-2 text-justify'>
                 {children}
             </p>
         ),
@@ -103,17 +100,17 @@ const richTextRenderOptions: Options = {
             </h2>
         ),
         [BLOCKS.HEADING_3]: (node, children) => (
-            <h3 className='pt-1'>
+            <h3 className='pt-4'>
                 {children}
             </h3>
         ),
-        [BLOCKS.HEADING_4]: (node, children) => (
-            <h4 className='pt-1'>
+        [BLOCKS.HEADING_4]: (nde, children) => (
+            <h4 className='pt-4'>
                 {children}
             </h4>
         ),
         [BLOCKS.HEADING_5]: (node, children) => (
-            <h5 className='pt-1 font-bold py-2'>
+            <h5 className='pt-4 font-bold pb-2'>
                 {children}
             </h5>
         ),
@@ -133,17 +130,11 @@ const richTextRenderOptions: Options = {
             </li>
         ),
         [BLOCKS.QUOTE]: (node, children) => <pre>{children}</pre>,
-
-          [BLOCKS.EMBEDDED_ASSET]: (node, children) => {
-            const {file} = node.data.target.fields
-            const { image } = file.details
-            // retrieve asset by id from map
-            // const imageData = richTextImages[node.data.target.sys.id]
-            // const image = getImage(imageData.image)
-            return <div className="flex center py-5">
-                <Image src={'https:' + file.url} alt={file.fileName} width={image.width} height={image.height} />
-            </div> 
-          },
+        [BLOCKS.EMBEDDED_ASSET]: (node, children) => {
+            return <div className="flex center mt-8">
+                <ContentfulImage asset={node.data.target} />
+            </div>
+        },
     },
     renderMark: {
         [MARKS.BOLD]: (text) => (

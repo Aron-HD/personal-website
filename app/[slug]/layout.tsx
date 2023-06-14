@@ -2,7 +2,6 @@ import { Metadata } from "next"
 import { ReactNode } from 'react'
 import '../globals.css'
 import Link from "next/link"
-import OutlineButton from "../components/buttons/outline"
 
 export const metadata: Metadata = {
   title: 'Aron Davidson: Project Page',
@@ -13,13 +12,10 @@ export const metadata: Metadata = {
 
 const ReturnLink = () => {
   return (
-    // <OutlineButton>
-      <Link className="hover:text-primary font-bold" href="/#projects">
-        {/* draw a thick left arrow in unicode */}
+      <Link className="hover:text-primary font-bold block text-center items-center align-middle" href="/#projects">
         &#x2B05;
         Return
       </Link>
-    // </OutlineButton>
   )
 }
 
@@ -30,11 +26,11 @@ export default function Layout({
 }) {
   return (
     <html lang="en">
-      <body className="grid gap-2 grid-cols-1 grid-rows-[8rem_auto_8rem] w-screen place-items-center bg-background text-text">
-        <header className="">
+      <body className="grid gap-0 md:gap-2 grid-cols-1 grid-rows-[4rem_auto_4rem] md:grid-rows-[8rem_auto_8rem] w-screen place-items-center bg-background text-text">
+        <header>
           <ReturnLink />
         </header>
-        <main className="w-full flex justify-center text-justify">
+        <main className="w-full flex justify-center">
           {children}
         </main>
         <footer>

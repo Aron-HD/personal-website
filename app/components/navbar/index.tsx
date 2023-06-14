@@ -34,8 +34,10 @@ const NavClosed = () => {
 
   return (
     <nav className={`${scrollingDown ? "opacity-0" : "opacity-100"} ${scrolledToTop ? "static opacity-100" : "fixed"} 
-      flex w-full items-center justify-between m-auto p-[20px_40px] ease-linear duration-300 transition-[all_0.25s_cubic-bezier(0.65,_0.05,_0.36,_1)]`
+      bg-background flex w-full ease-linear duration-300 transition-[all_0.25s_cubic-bezier(0.65,_0.05,_0.36,_1)]`
     } >
+      <div className="flex w-full items-center justify-between m-auto px-5 py-5 md:px-10">
+
       <Logo />
       {/* <NavBurger /> */}
       {/* <Box
@@ -50,6 +52,7 @@ const NavClosed = () => {
 
         <Social className="flex flex-col gap-6" />
         <div title="stalk" className="h-full w-0 border-x-[1px] border-secondary opacity-20 shadow" />
+      </div>
       </div>
     </nav>
   )
