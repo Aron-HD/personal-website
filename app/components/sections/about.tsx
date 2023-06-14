@@ -49,7 +49,7 @@ const options: Options = {
         [INLINES.HYPERLINK]: (node, children) => {
             const { data: { uri } } = node as Hyperlink;
             return (
-                <Link href={uri} target="_blank" className='hover:text-accent font-bold text-primary cursor-pointer'>{children}</Link>
+                <Link href={uri} target="_blank" rel="noopener noreferrer" className='dark:text-primary-dark dark:hover:text-accent-dark hover:text-accent-dark font-bold text-primary-light cursor-pointer'>{children}</Link>
             )
         }
     }

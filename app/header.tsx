@@ -1,7 +1,11 @@
 import Navbar from "./components/navbar";
 
-const Header = () => (
-    <header className="flex w-full"><Navbar /></header>
+type Props = { className?: string };
+
+const Header: React.FC<Props> = ({className}) => (
+    <header className={className += " flex w-full"}>
+        <Navbar />
+    </header>
 )
 
 export default Header;

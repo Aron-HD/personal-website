@@ -10,8 +10,8 @@ export default async function App() {
 
   return (
     <>
-      <Header />
-      <main className="flex px-5 py-10 md:py-0 md:px-0 flex-col gap-[50vh] md:grid grid-rows-none md:grid-rows-[90vh_100vh_100vh_100vh] w-full place-items-center md:gap-2">
+      <Header className="dark:bg-background-dark bg-background-light dark:text-text-dark text-text-light" />
+      <main className="dark:bg-background-dark bg-background-light dark:text-text-dark text-text-light flex px-5 py-10 md:py-0 md:px-0 flex-col gap-[50vh] md:grid grid-rows-none md:grid-rows-[90vh_100vh_100vh_100vh] w-full place-items-center md:gap-2">
         <Home id="home" />
         {/* @ts-expect-error Server Component */}
         <About id="about" />
@@ -19,7 +19,7 @@ export default async function App() {
         <Projects id="projects" />
         <Contact id="contact" />
       </main>
-      <Footer />
+      <Footer className="dark:bg-background-dark bg-background-light dark:text-text-dark text-text-light" />
     </>
   )
 }

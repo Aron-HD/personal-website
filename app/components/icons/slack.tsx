@@ -1,7 +1,12 @@
 import Link from "next/link"
-const Slack = ({ handle }: { handle: string }) => (
+import { AnchorHTMLAttributes } from "react";
+
+type Props = AnchorHTMLAttributes<HTMLAnchorElement> & { handle: string }
+
+const Slack: React.FC<Props> = ({ handle, ...rest }) => (
     <Link
-        className="flex secondary-link"
+        // className="flex secondary-link"
+        {...rest}
         href={`https://${handle}.slack.com`}
         title="Slack"
         rel="noopener noreferrer"

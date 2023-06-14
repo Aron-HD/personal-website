@@ -1,12 +1,16 @@
+import { IconProps } from "@/types";
 import Link from "next/link"
 
-const Twitter = ({ handle }: { handle: string }) => {
+const Twitter: React.FC<IconProps> = ({ handle, ...rest }) => {
     return (
         <Link
-            className="flex secondary-link"
+            {...rest}
+            // className="flex secondary-link"
             // variant="secondary"
             href={`https://twitter.com/${handle}`}
             title="Twitter"
+            rel="noopener noreferrer"
+            target="_blank"
         >
             <svg
                 role="img"

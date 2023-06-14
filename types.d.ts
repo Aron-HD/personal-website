@@ -1,6 +1,9 @@
 import { BLOCKS, MARKS, Document } from '@contentful/rich-text-types';
 import { BlogPostFields } from '@/types';
 import { Asset, AssetFields, Entry, EntryField, EntryFieldTypes, Link } from "contentful";
+// import { AnchorHTMLAttributes } from "react";
+
+type IconProps = AnchorHTMLAttributes<HTMLAnchorElement> & { handle: string }
 
 interface ScrollFuncs {
     [key: string]: () => void | undefined;

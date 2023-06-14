@@ -1,6 +1,7 @@
 const Moon = () => {
   return (
     <svg
+      className="secondary-link"
       xmlns="http://www.w3.org/2000/svg"
       width="38"
       height="38"

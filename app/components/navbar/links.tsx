@@ -1,5 +1,7 @@
 "use client";
 
+import { ScrollFuncs } from "@/types";
+
 const NavLinks = () => {
 
   const scrollFuncs: ScrollFuncs = {
@@ -21,9 +23,9 @@ const NavLinks = () => {
         <li
           key={i}
           onClick={nl.onClick}
-          className="group relative font-regular text-accent hover:cursor-pointer hover:text-primary hover:bezier-all hover:duration-300 hover:ease-in-out hover:opacity-100 hover:font-bold"
+          className="group relative font-regular dark:text-accent-dark text-accent-light hover:cursor-pointer dark:hover:text-primary-dark hover:text-primary-light hover:bezier-all hover:duration-300 hover:ease-in-out hover:opacity-100 hover:font-bold"
         >
-          <p className="inline font-bold static text-primary opacity-90 group-hover:opacity-100 mr-1">
+          <p className="inline font-bold static dark:text-primary-dark text-primary-light opacity-90 group-hover:opacity-100 mr-1">
             0{i + 1}.
           </p>
           {nl.name}

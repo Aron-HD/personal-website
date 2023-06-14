@@ -72,7 +72,7 @@ export default function Contact(props: HTMLProps<HTMLElement>) {
                                 onChange={handleChange}
                             />
                         </fieldset>
-                        <button type="submit" className="font-bold rounded-md w-fit hover:scale-[1.025] bezier-all hover:text-primary px-4 py-2 text-accent bg-muted">Submit</button>
+                        <button type="submit" className="font-bold rounded-md w-fit hover:scale-[1.025] bezier-all dark:hover:text-primary-dark hover:text-primary-light px-4 py-2 dark:text-accent-dark text-accent-light dark:bg-muted-dark bg-muted-light">Submit</button>
                     </form>
                 </div>
             </div>

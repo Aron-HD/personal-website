@@ -2,7 +2,7 @@
 const Sun = () => {
   return (
     <svg
-      className="fill-secondary"
+      className="secondary-link"
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       height="40"

@@ -1,12 +1,16 @@
+import { IconProps } from "@/types";
 import Link from "next/link"
 
-const Github = ({ handle }: { handle: string }) => {
+const Github: React.FC<IconProps> = ({handle, ...rest}) => {
     return (
         <Link
+            {...rest}
+            // className="flex secondary-link"
+            // variant="secondary"
             href={`https://github.com/${handle}`}
             title="Github"
-            className="flex secondary-link"
-        // variant="secondary"
+            rel="noopener noreferrer"
+            target="_blank"
         >
             <svg
                 role="img"

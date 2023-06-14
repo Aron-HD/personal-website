@@ -11,16 +11,16 @@ const Social = ({ className }: Props) => {
     return (
         <ul className={className += " list-none bg-transparent"}>
             <li className="social-icon bezier-all animate-fade-in-down">
-                <Slack handle="aron-hd" />
+                <Slack className='flex secondary-link' handle="aron-hd" />
             </li>
             <li className="social-icon bezier-all animate-fade-in-down">
-                <Github handle="aron-hd" />
+                <Github className='flex secondary-link' handle="aron-hd" />
             </li>
             <li className="social-icon bezier-all animate-fade-in-down">
-                <Linkedin handle="aron-hd" />
+                <Linkedin className='flex secondary-link' handle="aron-hd" />
             </li>
             <li className="social-icon bezier-all animate-fade-in-down">
-                <Twitter handle="_aronhd" />
+                <Twitter className='flex secondary-link' handle="_aronhd" />
             </li>
         </ul>
     );

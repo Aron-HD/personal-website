@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 const ReturnLink = () => {
   return (
-      <Link className="hover:text-primary font-bold block text-center items-center align-middle" href="/#projects">
+      <Link className="hover:dark:text-primary-dark text-primary-light font-bold" href="/#projects">
         &#x2B05;
         Return
       </Link>
@@ -26,14 +26,14 @@ export default function Layout({
 }) {
   return (
     <html lang="en">
-      <body className="grid gap-0 md:gap-2 grid-cols-1 grid-rows-[4rem_auto_4rem] md:grid-rows-[8rem_auto_8rem] w-screen place-items-center bg-background text-text">
-        <header>
+      <body className="grid grid-cols-1 grid-rows-[4rem_auto_4rem] md:grid-rows-[8rem_auto_8rem] w-screen place-items-center bg-transparent">
+        <header className="dark:bg-background-dark bg-background-light dark:text-text-dark text-text-light w-full h-full flex center">
           <ReturnLink />
         </header>
-        <main className="w-full flex justify-center">
+        <main className="w-full flex justify-center dark:bg-background-dark bg-background-light dark:text-text-dark text-text-light">
           {children}
         </main>
-        <footer>
+        <footer className="dark:bg-background-dark bg-background-light dark:text-text-dark text-text-light flex w-full h-full center">
           <ReturnLink />
         </footer>
       </body>

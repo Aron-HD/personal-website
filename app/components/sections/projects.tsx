@@ -28,7 +28,7 @@ export default async function Projects(props: HTMLProps<HTMLElement>) {
 
 const Tag = (props: HTMLProps<HTMLElement>) => {
     return (
-        <span className="inline-block text-accent/80 w-fit h-fit font-monospace text-sm">
+        <span className="inline-block dark:text-accent-dark/80 text-accent-light/80 w-fit h-fit font-monospace text-sm">
             {props.children}
         </span>
     );
@@ -36,11 +36,11 @@ const Tag = (props: HTMLProps<HTMLElement>) => {
 
 const Project = ({ project }: { project: BlogPost }) => {
     return (
-        <article className="bg-muted rounded-md min-h-[300px] max-h-[300px] min-w-[300px] max-w-[350px]">
+        <article className="dark:bg-muted-dark bg-muted-light rounded-md min-h-[300px] max-h-[300px] min-w-[300px] max-w-[350px]">
             <Link className="grid gap-2 p-6 h-full" href={"/" + project.slug}>
                 <header className="space-y-2">
                     <div className="flex justify-between">
-                        <div className="h-6 w-6 text-primary">
+                        <div className="h-6 w-6 dark:text-primary-dark text-primary-light">
                             <svg
                                 width="25"
                                 height="25"
@@ -54,11 +54,11 @@ const Project = ({ project }: { project: BlogPost }) => {
                                 />
                             </svg>
                         </div>
-                        <div className="h-6 w-6 text-accent">
+                        <div className="h-6 w-6 dark:text-accent-dark text-accent-light">
                             <Github handle={project.gitHubLink} />
                         </div>
                     </div>
-                    <h3 className="text-accent hover:text-primary text-[26px] font-extrabold bezier-color">
+                    <h3 className="dark:text-accent-dark hover:text-primary-dark text-[26px] font-extrabold bezier-color">
                         {project.title.toString()}
                     </h3>
                 </header>

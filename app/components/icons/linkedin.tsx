@@ -1,11 +1,15 @@
+import { IconProps } from "@/types";
 import Link from "next/link"
 
-const LinkedIn = ({ handle }: { handle: string }) => {
+const LinkedIn: React.FC<IconProps> = ({ handle, ...rest }) => {
     return (
         <Link
-            className="flex secondary-link"
+            {...rest}
+            // className="flex secondary-link"
             href={`https://uk.linkedin.com/in/${handle}`}
             title="LinkedIn"
+            rel="noopener noreferrer"
+            target="_blank"
         >
             <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <title>LinkedIn</title>

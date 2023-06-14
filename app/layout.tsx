@@ -17,7 +17,7 @@ export default function Layout({
 }) {
   return (
     <html lang="en">
-      <body className="grid gap-2 grid-cols-1 w-full place-items-center bg-background text-text">
+      <body className="grid grid-cols-1 w-full place-items-center bg-background-light dark:bg-background-dark text-muted dark:text-text">
         {children}
       </body>
     </html>

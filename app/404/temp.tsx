@@ -13,9 +13,9 @@ export const metadata: Metadata = {
 export default function NotFoundLayout({ children }: { children: ReactNode }) {
     return (
         <html lang='en'>
-            <body className="flex center h-screen flex-col bg-background">
+            <body className="flex center h-screen flex-col dark:bg-background-dark bg-background-light">
                 {children}
-                <Link className="hover:text-primary font-bold" href="/">
+                <Link className="hover:dark:text-primary-dark  dark:text-primary-light font-bold" href="/">
                     &#x2B05;
                     Return
                 </Link>

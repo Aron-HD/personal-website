@@ -7,6 +7,7 @@ import { useState, useEffect, useRef } from "react"
 import Logo from "../icons/logo"
 import NavLinks from "./links"
 import Social from "../social";
+import ThemeSwitcher from "./themeSwitcher";
 
 const NavClosed = () => {
 
@@ -29,14 +30,11 @@ const NavClosed = () => {
     window.addEventListener("scroll", handleScroll)
   }, [])
 
-
-
-
   return (
-    <nav className={`${scrollingDown ? "opacity-0" : "opacity-100"} ${scrolledToTop ? "static opacity-100" : "fixed"} 
-      bg-background flex w-full ease-linear duration-300 transition-[all_0.25s_cubic-bezier(0.65,_0.05,_0.36,_1)]`
+    <nav className={`${scrollingDown ? "opacity-0 pointer-events-none" : "opacity-100"} ${scrolledToTop ? "static opacity-100" : "fixed"} 
+       flex w-full ease-linear duration-300 transition-[all_0.25s_cubic-bezier(0.65,_0.05,_0.36,_1)] bg-transparent`
     } >
-      <div className="flex w-full items-center justify-between m-auto px-5 py-5 md:px-10">
+      <div className="flex w-full items-center justify-between m-auto px-5 py-5 md:px-10 bg-transparent">
 
       <Logo />
       {/* <NavBurger /> */}
@@ -45,13 +43,13 @@ const NavClosed = () => {
       > */}
       <div className="hidden md:flex items-center gap-4">
         <NavLinks />
-        {/* <ThemeSwitcher /> */}
+        <ThemeSwitcher />
         {/* </Box> */}
       </div>
       <div className={`fixed hidden lg:flex flex-col center gap-6 bottom-0 left-[52px] top-[61%] h-screen`}>
 
         <Social className="flex flex-col gap-6" />
-        <div title="stalk" className="h-full w-0 border-x-[1px] border-secondary opacity-20 shadow" />
+        <div title="stalk" className="h-full w-0 border-x-[1px] dark:border-accent-dark border-accent-light opacity-20 shadow" />
       </div>
       </div>
     </nav>

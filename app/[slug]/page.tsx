@@ -38,7 +38,7 @@ export default async function ProjectPage({ params }: { params: { slug: string }
 
     return (
         <article className="px-8 md:px-0 md:max-w-[60%] grid gap-5">
-            <h1 className='font-black text-3xl text-primary'>
+            <h1 className='font-black text-3xl dark:text-primary-dark text-primary-light'>
                 {title}
             </h1>
             <section className="flex justify-between gap-2 items-end text-left" title='metadata'>
@@ -81,7 +81,7 @@ const richTextRenderOptions: Options = {
         [INLINES.HYPERLINK]: (node, children) => {
             const { data: { uri } } = node as Hyperlink;
             return (
-                <Link href={uri} target="_blank" className='hover:text-accent font-bold text-primary cursor-pointer'>{children}</Link>
+                <Link href={uri} target="_blank" className='hover:text-accent font-bold dark:text-primary-dark text-primary-light cursor-pointer'>{children}</Link>
             )
         },
         [BLOCKS.PARAGRAPH]: (node, children) => (
@@ -95,7 +95,7 @@ const richTextRenderOptions: Options = {
             </h1>
         ),
         [BLOCKS.HEADING_2]: (node, children) => (
-            <h2 className='text-2xl font-extrabold pt-4 text-primary font-heading'>
+            <h2 className='text-2xl font-extrabold pt-4 dark:text-primary-dark text-primary-light font-heading'>
                 {children}
             </h2>
         ),
@@ -120,7 +120,7 @@ const richTextRenderOptions: Options = {
             </ul>
         ),
         [BLOCKS.OL_LIST]: (node, children) => (
-            <ol className='list-decimal pl-10 marker:text-primary marker:font-bold'>
+            <ol className='list-decimal pl-10 marker:dark:text-primary-dark text-primary-light marker:font-bold'>
                 {children}
             </ol>
         ),
@@ -148,7 +148,7 @@ const richTextRenderOptions: Options = {
             </em>
         ),
         [MARKS.CODE]: (text) => (
-            <code className='bg-muted text-accent'>
+            <code className='bg-muted dark:text-accent-dark text-accent-light'>
                 {text}
             </code>
         ),
