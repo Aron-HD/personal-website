@@ -1,4 +1,4 @@
-import { PersonEntry, Person, BlogPostEntry, BlogPost } from '@/types';
+import { PersonEntry, Person, BlogPostEntry, BlogPost, ContentfulImageFields } from '@/types';
 import { createClient, EntrySkeletonType, ContentfulClientApi, EntriesQueries } from 'contentful';
 
 export default class ContentService {
@@ -20,7 +20,8 @@ export default class ContentService {
   }
 
   async getMe(): Promise<Person> {
-    return (await this._client.getEntry<PersonEntry>("15jwOBqpxqSAOy2eOO4S0m")).fields;
+    const {fields: me} = await this._client.withoutUnresolvableLinks.getEntry<PersonEntry>("15jwOBqpxqSAOy2eOO4S0m");
+    return me as Person;
   };
 
   async getBlogPosts(): Promise<BlogPost[]> {

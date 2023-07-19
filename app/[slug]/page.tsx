@@ -2,7 +2,7 @@ import { Options } from "@contentful/rich-text-react-renderer"
 import { BLOCKS, INLINES, MARKS, Hyperlink } from "@contentful/rich-text-types"
 import React from 'react'
 import ContentService from '@/lib/contentful'
-import { Person } from '@/types'
+import { ContentfulImageFields, Person } from '@/types'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import PageNotFound from '../not-found'
 import ContentfulImage from '../components/contentfulImage';
@@ -27,8 +27,12 @@ export default async function ProjectPage({ params }: { params: { slug: string }
         return PageNotFound();
     }
 
-    const { author: auth, gitHubLink, tags, publishDate, title, heroImage, bodyRichText } = project
-    const author = auth?.fields as Person
+    const { author: authr, gitHubLink, tags, publishDate, title, heroImage: hero, bodyRichText } = project
+    const author = authr?.fields as Person
+    const heroImage = hero?.fields as ContentfulImageFields
+    console.log(author)
+    console.log(heroImage)
+
 
     const pubDate = new Date(publishDate).toLocaleDateString('en-GB', {
         year: 'numeric',
@@ -43,11 +47,11 @@ export default async function ProjectPage({ params }: { params: { slug: string }
             </h1>
             <section className="flex justify-between gap-2 items-end text-left" title='metadata'>
                 <div>
-                    <b>@{author.github}</b>
+                    <b>@{author?.github}</b>
                     <br />
                     <em>{pubDate}</em>
                     <br />
-                    <a href={gitHubLink}>View repository</a>
+                    <Link href={gitHubLink}>View repository</Link>
                 </div>
                 <div className="inline-block flex-wrap text-right">
                     {tags &&
@@ -131,8 +135,9 @@ const richTextRenderOptions: Options = {
         ),
         [BLOCKS.QUOTE]: (node, children) => <pre>{children}</pre>,
         [BLOCKS.EMBEDDED_ASSET]: (node, children) => {
+            console.log(node)
             return <div className="flex center mt-8">
-                <ContentfulImage asset={node.data.target} />
+                <ContentfulImage asset={node.data.target.fields} />
             </div>
         },
     },

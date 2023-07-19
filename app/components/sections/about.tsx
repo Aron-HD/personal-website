@@ -7,10 +7,12 @@ import { Options, documentToReactComponents } from '@contentful/rich-text-react-
 import { INLINES, Hyperlink } from '@contentful/rich-text-types';
 import React from "react";
 import Link from "next/link";
+import { ContentfulImageFields } from "@/types";
 
 export default async function About(props: HTMLProps<HTMLElement>) {
     const pageName = "About";
     const me = await new ContentService().getMe();
+    const image = me.image.fields as ContentfulImageFields;
     const biography = await richTextFromMarkdown(me.shortBio);
 
     return (
@@ -26,9 +28,13 @@ export default async function About(props: HTMLProps<HTMLElement>) {
                         {me.image && (
                             <ContentfulImage
                                 className="rounded-full"
-                                asset={me.image}
+                                asset={image}
                                 width={300}
                                 height={300}
+                                priority={true}
+                                style={{ filter: 'invert(0)', color: 'transparent' }}
+                                unoptimized={true}
+                                strokeLinecap="round"
                             />
                         )}
                     </div>

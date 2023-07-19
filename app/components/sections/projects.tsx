@@ -39,7 +39,7 @@ const Project = ({ project }: { project: BlogPost }) => {
         <article className="dark:bg-muted-dark bg-muted-light rounded-md min-h-[300px] max-h-[300px] min-w-[300px] max-w-[350px]">
             <Link className="grid gap-2 p-6 h-full" href={"/" + project.slug}>
                 <header className="space-y-2">
-                    <div className="flex justify-between">
+                    <section className="flex justify-between">
                         <div className="h-6 w-6 dark:text-primary-dark text-primary-light">
                             <svg
                                 width="25"
@@ -55,9 +55,9 @@ const Project = ({ project }: { project: BlogPost }) => {
                             </svg>
                         </div>
                         <div className="h-6 w-6 dark:text-accent-dark text-accent-light">
-                            <Github handle={project.gitHubLink} />
+                            {/* <Github handle={project.gitHubLink} /> */}
                         </div>
-                    </div>
+                    </section>
                     <h3 className="dark:text-accent-dark hover:text-primary-dark text-[26px] font-extrabold bezier-color">
                         {project.title.toString()}
                     </h3>

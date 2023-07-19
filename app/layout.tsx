@@ -16,7 +16,7 @@ export default function Layout({
   children: ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" style={{filter: 'invert(0)'}}>
       <body className="grid grid-cols-1 w-full place-items-center bg-background-light dark:bg-background-dark text-muted dark:text-text">
         {children}
       </body>

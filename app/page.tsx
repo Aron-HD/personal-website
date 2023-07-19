@@ -11,7 +11,7 @@ export default async function App() {
   return (
     <>
       <Header className="dark:bg-background-dark bg-background-light dark:text-text-dark text-text-light" />
-      <main className="dark:bg-background-dark bg-background-light dark:text-text-dark text-text-light flex px-5 py-10 md:py-0 md:px-0 flex-col gap-[50vh] md:grid grid-rows-none md:grid-rows-[90vh_100vh_100vh_100vh] w-full place-items-center md:gap-2">
+      <main className="dark:bg-background-dark bg-background-light dark:text-text-dark text-text-light flex px-5 py-10 md:py-0 md:px-0 flex-col gap-[50vh] md:grid grid-rows-none md:grid-rows-[90vh_100vh_auto_100vh] lg:grid-rows-[90vh_repeat(3,_100vh)] w-full place-items-center md:gap-2">
         <Home id="home" />
         {/* @ts-expect-error Server Component */}
         <About id="about" />
