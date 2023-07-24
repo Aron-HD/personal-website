@@ -14,13 +14,6 @@ export async function generateStaticParams() {
         .then((slugs) => slugs.map((slug) => ({
             params: {
                 slug
-            },
-            headers: {
-                // set cors headers
-                'Access-Control-Allow-Origin': 'https://aronhd.com' || '*',
-                'Access-Control-Allow-Methods': 'GET,OPTIONS',
-                'Access-Control-Allow-Headers': 'Content-Type, Access-Control-Allow-Headers',
-
             }
         })))
 }
@@ -37,8 +30,6 @@ export default async function ProjectPage({ params }: { params: { slug: string }
     const { author: authr, gitHubLink, tags, publishDate, title, heroImage: hero, bodyRichText } = project
     const author = authr?.fields as Person
     const heroImage = hero?.fields as ContentfulImageFields
-    console.log(author)
-    console.log(heroImage)
 
 
     const pubDate = new Date(publishDate).toLocaleDateString('en-GB', {
@@ -92,7 +83,7 @@ const richTextRenderOptions: Options = {
         [INLINES.HYPERLINK]: (node, children) => {
             const { data: { uri } } = node as Hyperlink;
             return (
-                <Link href={uri} target="_blank" className='hover:text-accent font-bold dark:text-primary-dark text-primary-light cursor-pointer'>{children}</Link>
+                <a href={uri} target="_blank" className='hover:text-accent font-bold dark:text-primary-dark text-primary-light cursor-pointer'>{children}</a>
             )
         },
         [BLOCKS.PARAGRAPH]: (node, children) => (
