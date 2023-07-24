@@ -3,4 +3,4 @@
 
 [context.production]
   environment = { NODE_VERSION = "14.15.3" }
-  __NEXT_PRIVATE_PREBUNDLED_REACT = next
+  __NEXT_PRIVATE_PREBUNDLED_REACT = "next"
