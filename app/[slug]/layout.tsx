@@ -26,7 +26,8 @@ export default function Layout({
   children: ReactNode
 }) {
   return (
-    <div className="grid grid-cols-1 grid-rows-[4rem_auto_4rem] md:grid-rows-[8rem_auto_8rem] w-screen place-items-center">
+    <html lang="en">
+    <body className="grid grid-cols-1 grid-rows-[4rem_auto_4rem] md:grid-rows-[8rem_auto_8rem] w-screen place-items-center">
       <header className="dark:bg-background-dark bg-background-light dark:text-text-dark text-text-light w-full h-full flex center relative">
         <ReturnLink />
         <ThemeSwitcher className="absolute right-5" />
@@ -37,6 +38,7 @@ export default function Layout({
       <footer className="dark:bg-background-dark bg-background-light dark:text-text-dark text-text-light flex w-full h-full center">
         <ReturnLink />
       </footer>
-    </div>
+    </body>
+    </html>
   )
 }
