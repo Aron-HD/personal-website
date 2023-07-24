@@ -2,7 +2,7 @@ import { Metadata } from "next"
 import { ReactNode } from 'react'
 import '../globals.css'
 import Link from "next/link"
-import ThemeSwitcher from "../components/navbar/themeSwitcher"
+// import ThemeSwitcher from "../components/navbar/themeSwitcher"
 
 export const metadata: Metadata = {
   title: 'Aron Davidson: Project Page',
@@ -26,11 +26,10 @@ export default function Layout({
   children: ReactNode
 }) {
   return (
-    <html lang="en">
-    <body className="grid grid-cols-1 grid-rows-[4rem_auto_4rem] md:grid-rows-[8rem_auto_8rem] w-screen place-items-center">
+    <div className="grid grid-cols-1 grid-rows-[4rem_auto_4rem] md:grid-rows-[8rem_auto_8rem] w-screen place-items-center">
       <header className="dark:bg-background-dark bg-background-light dark:text-text-dark text-text-light w-full h-full flex center relative">
         <ReturnLink />
-        <ThemeSwitcher className="absolute right-5" />
+        {/* <ThemeSwitcher className="absolute right-5" /> */}
       </header>
       <main className="w-full flex justify-center dark:bg-background-dark bg-background-light dark:text-text-dark text-text-light">
         {children}
@@ -38,7 +37,6 @@ export default function Layout({
       <footer className="dark:bg-background-dark bg-background-light dark:text-text-dark text-text-light flex w-full h-full center">
         <ReturnLink />
       </footer>
-    </body>
-    </html>
+    </div>
   )
 }
